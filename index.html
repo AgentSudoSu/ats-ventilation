@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 <title>ATS Ventilation</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -19,468 +18,268 @@
 }
 
 body{
-
     font-family:'Inter',sans-serif;
-
-    background:#0f172a;
-
+    background:#0f1115;
     color:white;
-
     overflow-x:hidden;
 }
 
-/* HERO */
+/* BACKGROUND */
 
 .hero{
-
-    position:relative;
-
     min-height:100vh;
-
+    width:100%;
+    position:relative;
     display:flex;
-
-    align-items:center;
-
     justify-content:center;
-
-    text-align:center;
-
+    align-items:center;
     padding:40px 20px;
-
     overflow:hidden;
-
-    background:
-    linear-gradient(
-        rgba(15,23,42,.82),
-        rgba(15,23,42,.92)
-    ),
-
-    url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop');
-
-    background-size:cover;
-
-    background-position:center;
 }
-
-/* glow */
 
 .hero::before{
-
     content:'';
-
     position:absolute;
+    inset:0;
 
-    width:500px;
-    height:500px;
+    background:
+    linear-gradient(rgba(10,10,10,0.72), rgba(10,10,10,0.82)),
+    url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1400&auto=format&fit=crop');
 
-    background:#3b82f6;
-
-    border-radius:50%;
-
-    filter:blur(180px);
-
-    opacity:.18;
-
-    top:-150px;
-    left:-150px;
+    background-size:cover;
+    background-position:center;
+    filter:grayscale(30%);
 }
 
-.hero::after{
+/* CONTENT */
 
-    content:'';
-
-    position:absolute;
-
-    width:450px;
-    height:450px;
-
-    background:#06b6d4;
-
-    border-radius:50%;
-
-    filter:blur(180px);
-
-    opacity:.12;
-
-    bottom:-180px;
-    right:-150px;
-}
-
-.hero-content{
-
+.container{
     position:relative;
-
     z-index:2;
+    width:100%;
+    max-width:700px;
+    text-align:center;
 
-    max-width:850px;
+    background:rgba(255,255,255,0.04);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:32px;
+
+    padding:50px 28px;
+
+    box-shadow:
+    0 10px 40px rgba(0,0,0,0.45);
 }
+
+/* TOP BADGE */
 
 .badge{
-
     display:inline-block;
 
-    padding:12px 20px;
+    padding:14px 28px;
 
     border-radius:999px;
 
-    background:rgba(59,130,246,.12);
+    background:rgba(255,255,255,0.05);
 
-    border:1px solid rgba(59,130,246,.35);
+    border:1px solid rgba(255,255,255,0.08);
 
-    color:#93c5fd;
+    color:#d1d5db;
 
-    font-size:.9rem;
+    font-size:15px;
 
+    margin-bottom:35px;
+}
+
+/* TITLE */
+
+h1{
+    font-size:clamp(52px, 10vw, 92px);
+    line-height:0.95;
+    font-weight:800;
     margin-bottom:28px;
 }
 
-h1{
-
-    font-size:clamp(3rem,9vw,6rem);
-
-    font-weight:800;
-
-    line-height:1.05;
-
-    margin-bottom:24px;
-
-    letter-spacing:-2px;
-}
-
-.highlight{
-
-    background:linear-gradient(to right,#60a5fa,#22d3ee);
+.gradient{
+    background:linear-gradient(90deg,#ffffff,#9ca3af);
 
     -webkit-background-clip:text;
-
     -webkit-text-fill-color:transparent;
 }
 
-.subtitle{
+/* PARAGRAPH */
 
-    font-size:1.2rem;
-
+p{
+    font-size:clamp(18px, 3vw, 26px);
     line-height:1.8;
-
-    color:#cbd5e1;
-
-    max-width:720px;
-
-    margin:0 auto 40px;
+    color:#d1d5db;
+    margin-bottom:45px;
 }
 
-.buttons{
+/* BUTTONS */
 
+.button-group{
     display:flex;
-
-    justify-content:center;
-
+    flex-direction:column;
     gap:18px;
-
-    flex-wrap:wrap;
 }
 
 .btn{
-
     text-decoration:none;
-
-    padding:18px 34px;
-
+    padding:22px;
     border-radius:18px;
-
     font-weight:700;
-
-    transition:.3s;
+    font-size:20px;
+    transition:0.3s ease;
 }
 
+/* MAIN BUTTON */
+
 .btn-primary{
-
-    background:
-    linear-gradient(to right,#3b82f6,#06b6d4);
-
-    color:white;
-
-    box-shadow:
-    0 10px 30px rgba(59,130,246,.35);
+    background:linear-gradient(90deg,#f3f4f6,#9ca3af);
+    color:#111827;
 }
 
 .btn-primary:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:
-    0 16px 40px rgba(6,182,212,.45);
+    transform:translateY(-3px);
 }
 
+/* SECOND BUTTON */
+
 .btn-secondary{
-
-    border:1px solid rgba(255,255,255,.15);
-
-    background:rgba(255,255,255,.04);
-
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
     color:white;
 }
 
 .btn-secondary:hover{
-
-    transform:translateY(-4px);
-
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,0.08);
 }
 
-/* SERVICES */
+/* FEATURE BOXES */
 
-.services{
-
-    padding:100px 20px;
-
-    background:#111827;
-}
-
-.section-title{
-
-    text-align:center;
-
-    font-size:2.5rem;
-
-    margin-bottom:60px;
-
-    font-weight:800;
-}
-
-.services-grid{
-
-    max-width:1200px;
-
-    margin:auto;
+.features{
+    margin-top:50px;
 
     display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-
-    gap:25px;
+    gap:18px;
 }
 
-.service-card{
+.feature{
+    padding:28px;
 
-    background:rgba(255,255,255,.03);
+    border-radius:22px;
 
-    border:1px solid rgba(255,255,255,.06);
+    background:rgba(255,255,255,0.04);
 
-    border-radius:24px;
-
-    padding:35px 30px;
-
-    transition:.3s;
+    border:1px solid rgba(255,255,255,0.08);
 }
 
-.service-card:hover{
-
-    transform:translateY(-8px);
-
-    background:rgba(255,255,255,.05);
+.feature h3{
+    font-size:24px;
+    margin-top:10px;
 }
 
-.service-icon{
-
-    font-size:2.2rem;
-
-    margin-bottom:18px;
+.feature p{
+    margin-top:12px;
+    margin-bottom:0;
+    font-size:16px;
+    line-height:1.6;
 }
 
-.service-card h3{
-
-    margin-bottom:14px;
-
-    font-size:1.3rem;
-}
-
-.service-card p{
-
-    color:#cbd5e1;
-
-    line-height:1.7;
-}
-
-/* CONTACT */
-
-.contact{
-
-    padding:100px 20px;
-
-    text-align:center;
-
-    background:#0f172a;
-}
-
-.contact p{
-
-    color:#cbd5e1;
-
-    margin-bottom:35px;
-
-    font-size:1.1rem;
-}
+/* FOOTER */
 
 .footer{
-
-    padding:30px 20px;
-
-    text-align:center;
-
-    border-top:1px solid rgba(255,255,255,.06);
-
-    color:#94a3b8;
-
-    font-size:.9rem;
+    margin-top:40px;
+    color:#9ca3af;
+    font-size:14px;
 }
 
-@media(max-width:700px){
+/* MOBILE */
 
-    .buttons{
+@media(max-width:768px){
 
-        flex-direction:column;
-    }
+.container{
+    padding:40px 22px;
+    border-radius:26px;
+}
 
-    .btn{
-
-        width:100%;
-    }
+.btn{
+    font-size:18px;
+    padding:20px;
+}
 
 }
 
 </style>
-
 </head>
 
 <body>
 
 <section class="hero">
 
-    <div class="hero-content">
+<div class="container">
 
-        <div class="badge">
-            Commercial & Domestic Specialists
-        </div>
+<div class="badge">
+Commercial & Domestic Ventilation Specialists
+</div>
 
-        <h1>
+<h1>
+<span class="gradient">ATS</span><br>
+Ventilation
+</h1>
 
-            <span class="highlight">
-                ATS
-            </span>
+<p>
+Professional ventilation, extraction, and ducting solutions for commercial and domestic projects across Hull and surrounding areas.
+</p>
 
-            Ventilation
+<div class="button-group">
 
-        </h1>
+<a href="tel:YOURNUMBERHERE" class="btn btn-primary">
+Call Now
+</a>
 
-        <p class="subtitle">
-
-            Professional ventilation, extraction, and ducting solutions
-            for commercial and domestic projects across Hull and surrounding areas.
-
-        </p>
-
-        <div class="buttons">
-
-            <a href="tel:YOURNUMBER" class="btn btn-primary">
-                Call Now
-            </a>
-
-            <a href="mailto:youremail@email.com" class="btn btn-secondary">
-                Get A Quote
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-<section class="services">
-
-    <h2 class="section-title">
-        Our Services
-    </h2>
-
-    <div class="services-grid">
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                🌬️
-            </div>
-
-            <h3>
-                Ventilation Systems
-            </h3>
-
-            <p>
-                Installation and maintenance of high-quality ventilation systems
-                for homes, offices, and commercial properties.
-            </p>
-
-        </div>
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                🏭
-            </div>
-
-            <h3>
-                Ducting Installation
-            </h3>
-
-            <p>
-                Professional ductwork installation with reliable airflow
-                performance and clean finishing.
-            </p>
-
-        </div>
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                🔧
-            </div>
-
-            <h3>
-                Repairs & Maintenance
-            </h3>
-
-            <p>
-                Fast diagnostics, repairs, servicing, and ongoing maintenance
-                for ventilation systems and extraction units.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<section class="contact">
-
-    <h2 class="section-title">
-        Get In Touch
-    </h2>
-
-    <p>
-        Need a quote or want to discuss a project?
-        Contact ATS Ventilation today.
-    </p>
-
-    <a href="mailto:youremail@email.com" class="btn btn-primary">
-        Email Us
-    </a>
-
-</section>
-
-<div class="footer">
-
-    © 2026 ATS Ventilation — All Rights Reserved
+<a href="mailto:YOUREMAILHERE@gmail.com" class="btn btn-secondary">
+Get A Quote
+</a>
 
 </div>
+
+<div class="features">
+
+<div class="feature">
+<h3>⚡ Fast & Reliable</h3>
+<p>
+Professional installations completed efficiently and to a high standard.
+</p>
+</div>
+
+<div class="feature">
+<h3>🏗 Commercial & Domestic</h3>
+<p>
+From homes to large commercial projects, ATS Ventilation delivers tailored solutions.
+</p>
+</div>
+
+<div class="feature">
+<h3>🛠 Quality Workmanship</h3>
+<p>
+Clean installs, attention to detail, and dependable aftercare.
+</p>
+</div>
+
+</div>
+
+<div class="footer">
+ATS Ventilation © 2026
+</div>
+
+</div>
+
+</section>
 
 </body>
 </html>
