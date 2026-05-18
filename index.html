@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>ATS Ventilation</title>
 
@@ -10,6 +12,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
+/* ---------------- RESET ---------------- */
 
 *{
     margin:0;
@@ -27,68 +31,88 @@ body{
     color:#222;
 }
 
-/* ---------------- NAVBAR ---------------- */
+/* ---------------- HEADER ---------------- */
 
-nav{
+.top-header{
     position:fixed;
     top:0;
+    left:0;
     width:100%;
-    z-index:1000;
-    background:rgba(255,255,255,0.95);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid #ddd;
-}
-
-.nav-container{
-    max-width:1200px;
-    margin:auto;
-    padding:18px 20px;
+    background:white;
     display:flex;
     justify-content:space-between;
     align-items:center;
+    padding:18px 22px;
+    z-index:9999;
+    border-bottom:1px solid #e6e6e6;
 }
 
 .logo{
-    font-size:1.6rem;
+    font-size:2rem;
     font-weight:800;
     color:#111;
 }
 
 .logo span{
-    color:#777;
+    font-weight:500;
+    color:#666;
 }
 
-.nav-links{
+.search-container{
     display:flex;
-    gap:25px;
+    align-items:center;
+    width:340px;
+    max-width:50%;
 }
 
-.nav-links a{
-    text-decoration:none;
-    color:#333;
-    font-weight:600;
-    transition:0.3s;
+.search-container input{
+    width:100%;
+    padding:13px;
+    border:2px solid #d8d8d8;
+    border-right:none;
+    outline:none;
+    font-size:1rem;
 }
 
-.nav-links a:hover{
-    color:#888;
+.search-container button{
+    width:58px;
+    height:50px;
+    border:none;
+    background:#555;
+    color:white;
+    font-size:1.1rem;
+    cursor:pointer;
+}
+
+.menu-icon{
+    font-size:2rem;
+    color:#555;
+    cursor:pointer;
 }
 
 /* ---------------- HERO ---------------- */
 
 .hero{
     height:100vh;
+
     background:
-    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)),
-    url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop');
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1600&auto=format&fit=crop');
+
     background-size:cover;
     background-position:center;
+
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
+
     text-align:center;
+
     color:white;
+
     padding:20px;
+
+    margin-top:85px;
 }
 
 .hero-content{
@@ -97,20 +121,20 @@ nav{
 
 .badge{
     display:inline-block;
-    padding:12px 28px;
-    border:1px solid rgba(255,255,255,0.3);
+    padding:14px 28px;
     border-radius:50px;
-    margin-bottom:30px;
-    font-size:0.95rem;
-    backdrop-filter:blur(8px);
+    border:1px solid rgba(255,255,255,0.25);
+    backdrop-filter:blur(10px);
     background:rgba(255,255,255,0.08);
+    margin-bottom:30px;
+    font-size:1rem;
 }
 
 .hero h1{
     font-size:5rem;
+    font-weight:800;
     line-height:1;
     margin-bottom:30px;
-    font-weight:800;
 }
 
 .hero h1 span{
@@ -119,10 +143,10 @@ nav{
 
 .hero p{
     font-size:1.4rem;
-    line-height:1.8;
-    max-width:800px;
+    line-height:1.9;
+    color:#e2e2e2;
+    max-width:850px;
     margin:auto;
-    color:#ddd;
 }
 
 /* ---------------- BUTTONS ---------------- */
@@ -136,8 +160,8 @@ nav{
 }
 
 .btn{
-    padding:18px 40px;
-    border-radius:8px;
+    padding:18px 42px;
+    border-radius:6px;
     text-decoration:none;
     font-weight:700;
     transition:0.3s;
@@ -150,8 +174,7 @@ nav{
 }
 
 .btn-primary:hover{
-    transform:translateY(-3px);
-    background:#ddd;
+    background:#d9d9d9;
 }
 
 .btn-secondary{
@@ -167,7 +190,7 @@ nav{
 /* ---------------- SERVICES ---------------- */
 
 .services{
-    padding:100px 20px;
+    padding:110px 20px;
     background:white;
 }
 
@@ -183,23 +206,24 @@ nav{
 
 .section-title p{
     color:#777;
-    font-size:1.1rem;
 }
 
 .service-grid{
     max-width:1200px;
     margin:auto;
+
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
     gap:30px;
 }
 
 .service-card{
-    background:#f8f8f8;
+    background:#fafafa;
+    border:1px solid #ececec;
+    border-radius:14px;
     padding:45px 30px;
-    border-radius:16px;
     transition:0.3s;
-    border:1px solid #eee;
 }
 
 .service-card:hover{
@@ -207,33 +231,33 @@ nav{
     box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
+.icon{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
 .service-card h3{
-    margin-top:20px;
     margin-bottom:15px;
     font-size:1.4rem;
 }
 
 .service-card p{
     color:#666;
-    line-height:1.7;
-    font-size:0.98rem;
-}
-
-.icon{
-    font-size:3rem;
+    line-height:1.8;
 }
 
 /* ---------------- ABOUT ---------------- */
 
 .about{
-    padding:120px 20px;
     background:#111;
     color:white;
+    padding:120px 20px;
 }
 
 .about-container{
     max-width:1200px;
     margin:auto;
+
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:60px;
@@ -251,7 +275,7 @@ nav{
 }
 
 .about p{
-    color:#ccc;
+    color:#cfcfcf;
     line-height:2;
     margin-bottom:20px;
 }
@@ -259,13 +283,14 @@ nav{
 /* ---------------- GALLERY ---------------- */
 
 .gallery{
-    padding:100px 20px;
-    background:#fafafa;
+    padding:110px 20px;
+    background:#f8f8f8;
 }
 
 .gallery-grid{
     max-width:1200px;
     margin:auto;
+
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:20px;
@@ -287,40 +312,43 @@ nav{
 
 .cta{
     padding:120px 20px;
+
     background:
-    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-    url('https://images.unsplash.com/photo-1581092160607-ee22731d8b2d?q=80&w=1600&auto=format&fit=crop');
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1600&auto=format&fit=crop');
+
     background-size:cover;
     background-position:center;
+
     text-align:center;
     color:white;
 }
 
 .cta h2{
     font-size:3rem;
-    margin-bottom:25px;
+    margin-bottom:20px;
 }
 
 .cta p{
     max-width:700px;
     margin:auto;
-    line-height:1.8;
-    color:#ddd;
+    line-height:1.9;
+    color:#d6d6d6;
     margin-bottom:40px;
 }
 
 /* ---------------- FOOTER ---------------- */
 
 footer{
-    background:#fff;
-    padding:60px 20px;
+    background:white;
+    padding:70px 20px;
     text-align:center;
-    border-top:1px solid #ddd;
+    border-top:1px solid #e2e2e2;
 }
 
 footer h3{
-    margin-bottom:20px;
     font-size:2rem;
+    margin-bottom:20px;
 }
 
 footer p{
@@ -344,35 +372,58 @@ footer p{
         grid-template-columns:1fr;
     }
 
-    .nav-links{
-        display:none;
+}
+
+@media(max-width:768px){
+
+    .logo{
+        font-size:1.2rem;
+    }
+
+    .search-container{
+        width:170px;
+    }
+
+    .search-container input{
+        padding:10px;
+        font-size:0.9rem;
+    }
+
+    .search-container button{
+        height:44px;
     }
 
 }
 
 </style>
+
 </head>
+
 <body>
 
-<!-- NAVBAR -->
+<!-- HEADER -->
 
-<nav>
-    <div class="nav-container">
+<header class="top-header">
 
-        <div class="logo">
-            ATS <span>Ventilation</span>
-        </div>
+    <div class="logo">
+        ATS <span>VENTILATION</span>
+    </div>
 
-        <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#services">Services</a>
-            <a href="#about">About</a>
-            <a href="#gallery">Projects</a>
-            <a href="#contact">Contact</a>
-        </div>
+    <div class="search-container">
+
+        <input type="text" placeholder="Search">
+
+        <button>
+            🔍
+        </button>
 
     </div>
-</nav>
+
+    <div class="menu-icon">
+        ☰
+    </div>
+
+</header>
 
 <!-- HERO -->
 
@@ -381,7 +432,7 @@ footer p{
     <div class="hero-content">
 
         <div class="badge">
-            Commercial & Domestic Ventilation Specialists
+            Commercial & Domestic Specialists
         </div>
 
         <h1>
@@ -389,18 +440,18 @@ footer p{
         </h1>
 
         <p>
-            Professional ventilation, extraction, ducting, and air movement
-            solutions for commercial and domestic projects across Hull and surrounding areas.
+            Professional ventilation, extraction, and ducting solutions for
+            commercial and domestic projects across Hull and surrounding areas.
         </p>
 
         <div class="hero-buttons">
 
             <a href="tel:01482123456" class="btn btn-primary">
-                Call Now
+                CALL NOW
             </a>
 
             <a href="mailto:info@atsventilation.co.uk" class="btn btn-secondary">
-                Get A Quote
+                GET A QUOTE
             </a>
 
         </div>
@@ -411,45 +462,66 @@ footer p{
 
 <!-- SERVICES -->
 
-<section class="services" id="services">
+<section class="services">
 
     <div class="section-title">
+
         <h2>Our Services</h2>
-        <p>Professional ventilation solutions tailored to your project.</p>
+
+        <p>
+            Reliable ventilation systems built around quality workmanship.
+        </p>
+
     </div>
 
     <div class="service-grid">
 
         <div class="service-card">
+
             <div class="icon">🛠️</div>
-            <h3>Ducting Installation</h3>
+
+            <h3>Bespoke Design</h3>
+
             <p>
-                Full ventilation and ductwork installation for commercial and domestic environments.
+                Tailored ventilation systems designed to suit your project requirements.
             </p>
+
         </div>
 
         <div class="service-card">
+
             <div class="icon">🏢</div>
-            <h3>Commercial Systems</h3>
+
+            <h3>Commercial Installation</h3>
+
             <p>
-                Large-scale extraction and ventilation systems for offices, schools, and industrial units.
+                Professional ducting and extraction systems for commercial buildings.
             </p>
+
         </div>
 
         <div class="service-card">
+
             <div class="icon">🏠</div>
+
             <h3>Domestic Ventilation</h3>
+
             <p>
-                Bathroom, kitchen, and home airflow systems designed for comfort and efficiency.
+                Home airflow and extraction systems designed for efficiency and comfort.
             </p>
+
         </div>
 
         <div class="service-card">
+
             <div class="icon">⚡</div>
-            <h3>Maintenance & Repairs</h3>
+
+            <h3>Maintenance</h3>
+
             <p>
-                Reliable servicing, fault finding, and maintenance for ventilation equipment and systems.
+                Planned maintenance and repair services to keep systems operating efficiently.
             </p>
+
         </div>
 
     </div>
@@ -458,7 +530,7 @@ footer p{
 
 <!-- ABOUT -->
 
-<section class="about" id="about">
+<section class="about">
 
     <div class="about-container">
 
@@ -466,20 +538,22 @@ footer p{
 
         <div>
 
-            <h2>Built Around Quality</h2>
+            <h2>
+                Reliable. Efficient. Built Around You.
+            </h2>
 
             <p>
-                ATS Ventilation delivers clean, modern, and reliable ventilation systems
-                with a focus on workmanship, efficiency, and professional installation.
+                ATS Ventilation provides high-quality ducting, ventilation,
+                and extraction systems for both domestic and commercial clients.
             </p>
 
             <p>
-                Whether it’s domestic ducting or large commercial extraction systems,
-                we pride ourselves on high standards and dependable service.
+                From installations to maintenance and repairs,
+                we focus on clean workmanship and dependable service.
             </p>
 
-            <a href="#contact" class="btn btn-primary">
-                Contact Us
+            <a href="#" class="btn btn-primary">
+                Learn More
             </a>
 
         </div>
@@ -490,22 +564,27 @@ footer p{
 
 <!-- GALLERY -->
 
-<section class="gallery" id="gallery">
+<section class="gallery">
 
     <div class="section-title">
+
         <h2>Recent Projects</h2>
-        <p>Example installation imagery and project showcases.</p>
+
+        <p>
+            Example installation imagery and completed work.
+        </p>
+
     </div>
 
     <div class="gallery-grid">
 
-        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200&auto=format&fit=crop">
-
-        <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop">
 
         <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1200&auto=format&fit=crop">
 
-        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop">
+        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200&auto=format&fit=crop">
+
+        <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop">
 
     </div>
 
@@ -516,26 +595,26 @@ footer p{
 <section class="cta">
 
     <h2>
-        Need Ventilation Work?
+        Find Out How We Can Improve Your Environment
     </h2>
 
     <p>
-        Get in touch today for quotes, installations, repairs, or commercial ventilation solutions.
+        Contact ATS Ventilation today for commercial and domestic ventilation solutions.
     </p>
 
     <a href="mailto:info@atsventilation.co.uk" class="btn btn-primary">
-        Request A Quote
+        CONTACT US
     </a>
 
 </section>
 
 <!-- FOOTER -->
 
-<footer id="contact">
+<footer>
 
     <h3>ATS Ventilation</h3>
 
-    <p>Hull, United Kingdom</p>
+    <p>Hull, East Yorkshire</p>
 
     <p>info@atsventilation.co.uk</p>
 
@@ -550,4 +629,5 @@ footer p{
 </footer>
 
 </body>
+
 </html>
