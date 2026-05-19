@@ -349,27 +349,19 @@ footer{
 
     <div class="contact-container">
 
-        <form action="https://formsubmit.co/info@atsventilation.co.uk" method="POST" class="contact-form">
+        <form action="https://formsubmit.co/info@atsventilation.co.uk" method="POST">
 
-            <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_captcha" value="true">
 
-            <input type="hidden" name="_subject" value="New ATS Ventilation Enquiry">
+    <input type="text" name="name" placeholder="Your Name" required>
 
-            <input type="hidden" name="_next" value="https://atsventilation.co.uk/thanks.html">
+    <input type="email" name="email" placeholder="Your Email" required>
 
-            <input type="text" name="name" placeholder="Your Name" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
 
-            <input type="email" name="email" placeholder="Your Email" required>
+    <button type="submit">Send Message</button>
 
-            <input type="tel" name="phone" placeholder="Phone Number">
-
-            <textarea name="message" placeholder="Tell us about your project..." required></textarea>
-
-            <button type="submit">
-                SEND ENQUIRY
-            </button>
-
-        </form>
+</form>
 
         <div class="contact-info">
 
