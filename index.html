@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -153,6 +151,39 @@
     overflow:hidden;
 }
 
+.badge{
+    display:inline-block;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+
+    padding:12px 28px;
+
+    border-radius:50px;
+
+    margin-bottom:25px;
+
+    font-weight:500;
+}
+
+.hero h1{
+    font-size:4.8rem;
+    font-weight:800;
+
+    line-height:1.05;
+
+    margin-bottom:25px;
+}
+
+.hero p{
+    font-size:1.35rem;
+
+    max-width:700px;
+
+    margin:0 auto 40px;
+
+    color:#e5e5e5;
+}
+
 /* slideshow layers */
 
 .hero-slide{
@@ -237,6 +268,47 @@
     max-width:900px;
     padding:0 20px;
 }
+
+/* BUTTONS */
+
+.btn {
+    display: inline-block;
+    padding: 18px 40px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-size: 1.1rem;
+}
+
+.btn-primary {
+    background: white;
+    color: #111;
+}
+
+.btn-primary:hover {
+    background: #f0f0f0;
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: #111;
+}
+
+.hero-content{
+    position:relative;
+    z-index:5;
+
+    max-width:900px;
+    padding:0 20px;
+}
+
 
         /* SECTIONS */
         section {
@@ -461,16 +533,6 @@
 
     </div>
 
-</section>
-            <div class="badge">Commercial & Domestic Ventilation Specialists</div>
-            <h1>Expert Ventilation Solutions<br>in Sheffield</h1>
-            <p>Professional design, installation, and maintenance of ducting and extraction systems across South Yorkshire.</p>
-            
-            <div style="margin-top: 40px; display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
-                <a href="tel:079999013788" class="btn btn-primary">📞 CALL 07999 901 3788</a>
-                <a href="mailto:info@atsventilation.co.uk" class="btn btn-secondary">GET A FREE QUOTE</a>
-            </div>
-        </div>
     </section>
 
     <!-- SERVICES -->
