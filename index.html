@@ -134,72 +134,109 @@
         }
 
         /* HERO */
-        .hero {
-            height: 100vh;
-            min-height: 650px;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.65)),
-                        url('C36AF9E7-2DEB-4D93-8836-C620EB7F6ECB.png') center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            margin-top: 78px;
-        }
 
-        .hero-content {
-            max-width: 900px;
-            padding: 0 20px;
-        }
+.hero{
+    position:relative;
 
-        .badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(10px);
-            padding: 12px 28px;
-            border-radius: 50px;
-            margin-bottom: 25px;
-            font-weight: 500;
-        }
+    height:100vh;
+    min-height:650px;
 
-        .hero h1 {
-            font-size: 4.8rem;
-            font-weight: 800;
-            line-height: 1.05;
-            margin-bottom: 25px;
-        }
-        .hero h1 span { color: #e0e0e0; }
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-        .hero p {
-            font-size: 1.35rem;
-            max-width: 700px;
-            margin: 0 auto 40px;
-            color: #e5e5e5;
-        }
+    text-align:center;
+    color:white;
 
-        .btn {
-            display: inline-block;
-            padding: 18px 40px;
-            border-radius: 8px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.3s;
-            font-size: 1.1rem;
-        }
-        .btn-primary {
-            background: white;
-            color: #111;
-        }
-        .btn-primary:hover { background: #f0f0f0; transform: translateY(-3px); }
+    margin-top:78px;
 
-        .btn-secondary {
-            border: 2px solid white;
-            color: white;
-        }
-        .btn-secondary:hover {
-            background: white;
-            color: #111;
-        }
+    overflow:hidden;
+}
+
+/* slideshow layers */
+
+.hero-slide{
+    position:absolute;
+    inset:0;
+
+    background-size:cover;
+    background-position:center;
+
+    opacity:0;
+
+    animation:heroFade 18s infinite;
+}
+
+/* dark overlay */
+
+.hero-slide::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:linear-gradient(
+        rgba(0,0,0,0.65),
+        rgba(0,0,0,0.72)
+    );
+}
+
+/* image 1 */
+
+.hero-slide:nth-child(1){
+    background-image:url('C36AF9E7-2DEB-4D93-8836-C620EB7F6ECB.png');
+    animation-delay:0s;
+}
+
+/* image 2 */
+
+.hero-slide:nth-child(2){
+    background-image:url('IMG_2666.jpeg');
+    animation-delay:6s;
+}
+
+/* image 3 */
+
+.hero-slide:nth-child(3){
+    background-image:url('IMG_2667.webp');
+    animation-delay:12s;
+}
+
+/* animation */
+
+@keyframes heroFade{
+
+    0%{
+        opacity:0;
+        transform:scale(1);
+    }
+
+    8%{
+        opacity:1;
+    }
+
+    30%{
+        opacity:1;
+        transform:scale(1.08);
+    }
+
+    38%{
+        opacity:0;
+    }
+
+    100%{
+        opacity:0;
+    }
+
+}
+
+.hero-content{
+    position:relative;
+    z-index:5;
+
+    max-width:900px;
+    padding:0 20px;
+}
 
         /* SECTIONS */
         section {
@@ -388,8 +425,43 @@
     </header>
 
     <!-- HERO -->
-    <section class="hero">
-        <div class="hero-content">
+<section class="hero">
+
+    <!-- slideshow images -->
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+
+    <div class="hero-content">
+
+        <div class="badge">
+            Commercial & Domestic Ventilation Specialists
+        </div>
+
+        <h1>
+            Expert Ventilation Solutions<br>
+            in Sheffield
+        </h1>
+
+        <p>
+            Professional design, installation, and maintenance of ducting and extraction systems across South Yorkshire.
+        </p>
+
+        <div style="margin-top:40px; display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+
+            <a href="tel:079999013788" class="btn btn-primary">
+                📞 CALL 07999 901 3788
+            </a>
+
+            <a href="mailto:info@atsventilation.co.uk" class="btn btn-secondary">
+                GET A FREE QUOTE
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
             <div class="badge">Commercial & Domestic Ventilation Specialists</div>
             <h1>Expert Ventilation Solutions<br>in Sheffield</h1>
             <p>Professional design, installation, and maintenance of ducting and extraction systems across South Yorkshire.</p>
