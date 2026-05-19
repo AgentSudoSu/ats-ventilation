@@ -195,7 +195,7 @@
 
     opacity:0;
 
-    animation:heroFade 18s infinite;
+    animation:heroFade 18s infinite ease-in-out;
 }
 
 /* dark overlay */
@@ -246,17 +246,19 @@
         opacity:1;
     }
 
-    30%{
+    28%{
         opacity:1;
-        transform:scale(1.08);
+        transform:scale(1.06);
     }
 
-    38%{
-        opacity:0;
+    36%{
+        opacity:0.4;
+        transform:scale(1.08);
     }
 
     100%{
         opacity:0;
+        transform:scale(1.1);
     }
 
 }
