@@ -519,6 +519,14 @@ acceptCookies.addEventListener('click', () => {
     cookieBanner.style.display = 'none';
 });
 
+const mobileLinks = document.querySelectorAll('.mobile-menu a');
+
+mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+    });
+});
+
 </script>
 
 </body>
