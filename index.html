@@ -1,17 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional ventilation, ducting & extraction systems in Sheffield and surrounding areas. Commercial & Domestic installations, design & maintenance.">
-    <title>ATS Ventilation | Sheffield Ducting & Extraction Specialists</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style> 
-    
-    .menu-icon{
+<title>ATS Ventilation | Sheffield Ducting & Extraction Specialists</title>
+
+<meta name="description" content="Professional ventilation, ducting & extraction systems in Sheffield and surrounding areas. Commercial & Domestic installations, design & maintenance.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    background:#f8f8f8;
+    color:#222;
+    line-height:1.6;
+}
+
+/* VARIABLES */
+
+:root{
+    --primary:#111;
+    --accent:#444;
+}
+
+/* HEADER */
+
+.top-header{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+
+    background:white;
+
+    padding:18px 5%;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    z-index:9999;
+
+    border-bottom:1px solid #eee;
+
+    box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* LOGO */
+
+.logo img{
+    height:42px;
+    width:auto;
+    display:block;
+}
+
+/* NAVIGATION */
+
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+nav a{
+    text-decoration:none;
+    color:#222;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#555;
+}
+
+/* MENU ICON */
+
+.menu-icon{
     width:58px;
     height:58px;
 
@@ -41,26 +125,26 @@
 .menu-icon i{
     pointer-events:none;
 }
-    
-    .service-card i{
-    font-size:3rem;
-    margin-bottom:20px;
-    color:#222;
-    display:block;
-}
-    
-    /* ---------------- MOBILE MENU ---------------- */
+
+/* MOBILE MENU */
 
 .mobile-menu{
     position:fixed;
+
     top:85px;
     right:-100%;
+
     width:260px;
     height:100vh;
+
     background:white;
+
     z-index:9998;
+
     padding:40px 30px;
+
     transition:0.35s ease;
+
     box-shadow:-10px 0 30px rgba(0,0,0,0.1);
 }
 
@@ -70,105 +154,38 @@
 
 .mobile-menu a{
     display:block;
+
     margin-bottom:25px;
+
     text-decoration:none;
+
     color:#111;
+
     font-size:1.1rem;
     font-weight:600;
 }
-    
-        :root {
-            --primary: #111;
-            --accent: #444;
-        }
 
-        * { margin:0; padding:0; box-sizing:border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background: #f8f8f8;
-            color: #222;
-            line-height: 1.6;
-        }
-
-        /* HEADER */
-        .top-header {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            background: white;
-            padding: 18px 5%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            z-index: 9999;
-            border-bottom: 1px solid #eee;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        .logo {
-            font-size: 1.85rem;
-            font-weight: 800;
-            color: #111;
-        }
-        .logo span { color: #555; font-weight: 500; }
-
-        nav ul {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-        nav a {
-            text-decoration: none;
-            color: #222;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        nav a:hover { color: #555; }
-
-        .hamburger {
-            display: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-        }
-
-        /* HERO */
+/* HERO */
 
 .hero{
     position:relative;
+
     height:100vh;
     min-height:650px;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     text-align:center;
+
     color:white;
+
     margin-top:78px;
+
     overflow:hidden;
+
     background:#000;
-}
-
-.badge{
-    display:inline-block;
-    background:rgba(255,255,255,0.15);
-    backdrop-filter:blur(10px);
-    padding:12px 28px;
-    border-radius:50px;
-    margin-bottom:25px;
-    font-weight:500;
-}
-
-.hero h1{
-    font-size:4.8rem;
-    font-weight:800;
-    line-height:1.05;
-    margin-bottom:25px;
-}
-
-.hero p{
-    font-size:1.35rem;
-    max-width:700px;
-    margin:0 auto 40px;
-    color:#e5e5e5;
 }
 
 /* SLIDES */
@@ -187,16 +204,14 @@
     animation:heroFade 18s infinite linear;
 }
 
-/* DARK OVERLAY */
-
 .hero-slide::after{
     content:"";
+
     position:absolute;
     inset:0;
+
     background:rgba(0,0,0,0.55);
 }
-
-/* IMAGES */
 
 .hero-slide:nth-child(1){
     background-image:url('C36AF9E7-2DEB-4D93-8836-C620EB7F6ECB.png');
@@ -212,8 +227,6 @@
     background-image:url('IMG_2667.webp');
     animation-delay:12s;
 }
-
-/* SMOOTH CROSSFADE */
 
 @keyframes heroFade{
 
@@ -236,181 +249,245 @@
     100%{
         opacity:0;
     }
-
 }
+
+/* HERO CONTENT */
 
 .hero-content{
     position:relative;
     z-index:5;
+
     max-width:900px;
+
     padding:0 20px;
+}
+
+.badge{
+    display:inline-block;
+
+    background:rgba(255,255,255,0.15);
+
+    backdrop-filter:blur(10px);
+
+    padding:12px 28px;
+
+    border-radius:50px;
+
+    margin-bottom:25px;
+
+    font-weight:500;
+}
+
+.hero h1{
+    font-size:4.8rem;
+    font-weight:800;
+
+    line-height:1.05;
+
+    margin-bottom:25px;
+}
+
+.hero p{
+    font-size:1.35rem;
+
+    max-width:700px;
+
+    margin:0 auto 40px;
+
+    color:#e5e5e5;
 }
 
 /* BUTTONS */
 
-.btn {
-    display: inline-block;
-    padding: 18px 40px;
-    border-radius: 8px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: all 0.3s;
-    font-size: 1.1rem;
+.btn{
+    display:inline-block;
+
+    padding:18px 40px;
+
+    border-radius:8px;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+    transition:0.3s;
+
+    font-size:1.1rem;
 }
 
-.btn-primary {
-    background: white;
-    color: #111;
+.btn-primary{
+    background:white;
+    color:#111;
 }
 
-.btn-primary:hover {
-    background: #f0f0f0;
-    transform: translateY(-3px);
+.btn-primary:hover{
+    background:#f0f0f0;
+    transform:translateY(-3px);
 }
 
-.btn-secondary {
-    border: 2px solid white;
-    color: white;
+.btn-secondary{
+    border:2px solid white;
+    color:white;
 }
 
-.btn-secondary:hover {
-    background: white;
-    color: #111;
+.btn-secondary:hover{
+    background:white;
+    color:#111;
 }
 
-.hero-content{
-    position:relative;
-    z-index:5;
+/* GENERAL SECTION */
 
-    max-width:900px;
-    padding:0 20px;
+section{
+    padding:110px 5%;
 }
 
-
-        /* SECTIONS */
-        section {
-            padding: 110px 5%;
-        }
-        .section-title {
-            text-align: center;
-            margin-bottom: 70px;
-        }
-        .section-title h2 {
-            font-size: 2.8rem;
-            margin-bottom: 12px;
-        }
-        .section-title p {
-            color: #666;
-            font-size: 1.1rem;
-        }
-
-        /* Services */
-        .service-grid {
-            max-width: 1200px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-        .service-card {
-            background: white;
-            border: 1px solid #eee;
-            border-radius: 16px;
-            padding: 45px 30px;
-            text-align: center;
-            transition: all 0.4s;
-        }
-        .service-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-        }
-        .icon { font-size: 3.2rem; margin-bottom: 20px; }
-
-        /* About */
-        .about {
-            background: #111;
-            color: white;
-        }
-        .about-container {
-            max-width: 1200px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 70px;
-            align-items: center;
-        }
-        .about img {
-            width: 100%;
-            border-radius: 16px;
-        }
-
-        /* Gallery */
-        .gallery-grid {
-            max-width: 1200px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .gallery-grid img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            border-radius: 16px;
-            transition: 0.4s;
-        }
-        .gallery-grid img:hover {
-            transform: scale(1.04);
-        }
-
-        /* CTA */
-        .cta {
-            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-                        url('IMG_2666.jpeg') center/cover;
-            color: white;
-            text-align: center;
-        }
-
-        /* Footer */
-        footer {
-            background: #f8f8f8;
-            padding: 80px 5% 40px;
-            text-align: center;
-        }
-
-        /* Mobile */
-        @media (max-width: 900px) {
-            .hero h1 { font-size: 3.4rem; }
-            nav ul { display: none; }
-            .hamburger { display: block; }
-            .about-container { grid-template-columns: 1fr; }
-        }
-        
-       
-@media (max-width:768px){
-
-    .top-header{
-        padding:12px 5%;
-    }
-
-    .logo{
-        font-size:1.4rem;
-    }
-
-    .menu-icon{
-        width:50px;
-        height:50px;
-        font-size:1.2rem;
-    }
-
-    .hero{
-        margin-top:72px;
-    }
-
+.section-title{
+    text-align:center;
+    margin-bottom:70px;
 }
+
+.section-title h2{
+    font-size:2.8rem;
+    margin-bottom:12px;
+}
+
+.section-title p{
+    color:#666;
+    font-size:1.1rem;
+}
+
+/* SERVICES */
+
+.service-grid{
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+}
+
+.service-card{
+    background:white;
+
+    border:1px solid #eee;
+
+    border-radius:16px;
+
+    padding:45px 30px;
+
+    text-align:center;
+
+    transition:0.4s;
+}
+
+.service-card:hover{
+    transform:translateY(-12px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+.service-card i{
+    font-size:3rem;
+
+    margin-bottom:20px;
+
+    color:#222;
+
+    display:block;
+}
+
+/* ABOUT */
+
+.about{
+    background:#111;
+    color:white;
+}
+
+.about-container{
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    border-radius:16px;
+}
+
+/* GALLERY */
+
+.gallery-grid{
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:10px;
+}
+
+.gallery-item{
+    aspect-ratio:1;
+    overflow:hidden;
+    border-radius:12px;
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:0.4s;
+}
+
+.gallery-item img:hover{
+    transform:scale(1.05);
+}
+
+/* CTA */
+
+.cta{
+    background:
+    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+    url('IMG_2666.jpeg') center/cover;
+
+    color:white;
+
+    text-align:center;
+}
+
+/* FOOTER */
+
+footer{
+    background:#f8f8f8;
+
+    padding:80px 5% 40px;
+
+    text-align:center;
+}
+
+/* COOKIE BANNER */
 
 .cookie-banner{
     position:fixed;
+
     bottom:20px;
     left:20px;
     right:20px;
@@ -425,6 +502,7 @@
     display:flex;
     justify-content:space-between;
     align-items:center;
+
     gap:20px;
 
     z-index:99999;
@@ -438,7 +516,9 @@
 
 .cookie-banner button{
     border:none;
+
     background:white;
+
     color:#111;
 
     padding:10px 18px;
@@ -449,176 +529,303 @@
 
     cursor:pointer;
 }
-       
-    </style>
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    nav ul{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:3.4rem;
+    }
+
+    .about-container{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:768px){
+
+    .top-header{
+        padding:12px 5%;
+    }
+
+    .logo img{
+        height:34px;
+    }
+
+    .menu-icon{
+        width:50px;
+        height:50px;
+        font-size:1.2rem;
+    }
+
+    .hero{
+        margin-top:72px;
+    }
+
+    .hero h1{
+        font-size:2.8rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    .gallery-grid{
+        grid-template-columns:repeat(3,1fr);
+        gap:5px;
+    }
+
+    .cookie-banner{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+}
+
+</style>
 </head>
+
 <body>
 
-    <!-- HEADER -->
-    <header class="top-header">
-        <div class="logo">
+<!-- HEADER -->
+
+<header class="top-header">
+
+<div class="logo">
     <img src="logo.PNG" alt="ATS Ventilation Logo">
 </div>
-        
-        <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-        </nav>
 
-        <div class="menu-icon" id="menuToggle">
-    <i class="fa-solid fa-bars"></i>
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<div class="menu-icon" id="menuToggle">
+<i class="fa-solid fa-bars"></i>
 </div>
-    </header>
 
-    <!-- HERO -->
-<section class="hero">
+</header>
 
-    <!-- slideshow images -->
-    <div class="hero-slide"></div>
-    <div class="hero-slide"></div>
-    <div class="hero-slide"></div>
-
-    <div class="hero-content">
-
-        <div class="badge">
-            Commercial & Domestic Ventilation Specialists
-        </div>
-
-        <h1>
-            Expert Ventilation Solutions<br>
-            in Sheffield
-        </h1>
-
-        <p>
-            Professional design, installation, and maintenance of ducting and extraction systems across South Yorkshire.
-        </p>
-
-        <div style="margin-top:40px; display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
-
-            <a href="tel:079999013788" class="btn btn-primary">
-                📞 CALL 07999 901 3788
-            </a>
-
-            <a href="mailto:info@atsventilation.co.uk" class="btn btn-secondary">
-                GET A FREE QUOTE
-            </a>
-
-        </div>
-
-    </div>
-
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" class="services">
-        <div class="section-title">
-            <h2>Our Services</h2>
-            <p>Quality ventilation systems you can rely on</p>
-        </div>
-        
-        <div class="service-grid">
-            <div class="service-card">
-                <i class="fa-solid fa-compass-drafting"></i>
-                <h3>Bespoke Design</h3>
-                <p>Tailored ventilation and ducting systems designed specifically for your property and requirements.</p>
-            </div>
-            <div class="service-card">
-                <i class="fa-solid fa-building"></i>
-                <h3>Commercial Installation</h3>
-                <p>Complete ductwork and extraction systems for restaurants, offices, warehouses & more.</p>
-            </div>
-            <div class="service-card">
-                <i class="fa-solid fa-house"></i>
-                <h3>Domestic Ventilation</h3>
-                <p>Modern home ventilation, bathroom/kitchen extractors, and heat recovery systems.</p>
-            </div>
-            <div class="service-card">
-                <i class="fa-solid fa-screwdriver-wrench"></i>
-                <h3>Maintenance & Repair</h3>
-                <p>Regular servicing, filter changes, and repairs to keep your system performing efficiently.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="about">
-        <div class="about-container">
-            <img src="IMG_2667.webp" alt="ATS Ventilation team working on ducting installation">
-            <div>
-                <h2>Reliable. Professional.<br>Locally Trusted.</h2>
-                <p>ATS Ventilation delivers high-quality ventilation, ducting, and extraction solutions across Sheffield and surrounding areas.</p>
-                <p>With a strong focus on workmanship, compliance, and customer satisfaction, we handle projects of all sizes — from domestic upgrades to full commercial installations.</p>
-                <a href="#" class="btn btn-primary" style="margin-top:20px;">Learn About Us</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- GALLERY -->
-    <section id="projects" class="gallery">
-        <div class="section-title">
-            <h2>Recent Projects</h2>
-            <p>Real work. Real results.</p>
-        </div>
-        
-        <div class="gallery-grid">
-            <img src="IMG_2661.jpeg" alt="Commercial kitchen extraction system">
-            <img src="IMG_2662.png" alt="Office ventilation ducting">
-            <img src="IMG_2663.png" alt="Domestic ventilation installation">
-            <img src="IMG_2664.png" alt="Completed ductwork project">
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section id="contact" class="cta">
-        <h2>Ready to Improve Your Air Quality?</h2>
-        <p style="max-width:700px; margin:20px auto; font-size:1.2rem;">
-            Get in touch today for a free no-obligation quote.
-        </p>
-        <a href="tel:079999013788" class="btn btn-primary" style="font-size:1.3rem; padding:22px 50px;">
-            📞 07999 901 3788
-        </a>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <h3>ATS Ventilation</h3>
-        <p>Sheffield • South Yorkshire</p>
-        <p><strong>07999 901 3788</strong></p>
-        <p>info@atsventilation.co.uk</p>
-        <br>
-        <p>&copy; 2026 ATS Ventilation. All Rights Reserved.</p>
-    </footer>
-    
-     <!-- MOBILE MENU -->
+<!-- MOBILE MENU -->
 
 <div class="mobile-menu" id="mobileMenu">
 
-    <a href="index.html">Home</a>
+<a href="index.html">Home</a>
 
-    <a href="#services">Services</a>
+<a href="#services">Services</a>
 
-    <a href="gallery.html">Gallery</a>
+<a href="gallery.html">Gallery</a>
 
-    <a href="about.html">About</a>
+<a href="about.html">About</a>
 
-    <a href="contact.html">Contact</a>
+<a href="contact.html">Contact</a>
 
-</div> 
-
-<div class="cookie-banner" id="cookieBanner">
-    <p>
-        We use cookies to improve your experience on our website.
-    </p>
-
-    <button id="acceptCookies">Accept</button>
 </div>
 
-     <script>
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-slide"></div>
+<div class="hero-slide"></div>
+<div class="hero-slide"></div>
+
+<div class="hero-content">
+
+<div class="badge">
+Commercial & Domestic Ventilation Specialists
+</div>
+
+<h1>
+Expert Ventilation Solutions<br>
+in Sheffield
+</h1>
+
+<p>
+Professional design, installation, and maintenance of ducting and extraction systems across South Yorkshire.
+</p>
+
+<div style="margin-top:40px; display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+
+<a href="tel:079999013788" class="btn btn-primary">
+CALL 07999 901 3788
+</a>
+
+<a href="mailto:info@atsventilation.co.uk" class="btn btn-secondary">
+GET A FREE QUOTE
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<div class="section-title">
+<h2>Our Services</h2>
+<p>Quality ventilation systems you can rely on</p>
+</div>
+
+<div class="service-grid">
+
+<div class="service-card">
+<i class="fa-solid fa-compass-drafting"></i>
+<h3>Bespoke Design</h3>
+<p>Tailored ventilation and ducting systems designed specifically for your property and requirements.</p>
+</div>
+
+<div class="service-card">
+<i class="fa-solid fa-building"></i>
+<h3>Commercial Installation</h3>
+<p>Complete ductwork and extraction systems for restaurants, offices, warehouses & more.</p>
+</div>
+
+<div class="service-card">
+<i class="fa-solid fa-house"></i>
+<h3>Domestic Ventilation</h3>
+<p>Modern home ventilation, bathroom/kitchen extractors, and heat recovery systems.</p>
+</div>
+
+<div class="service-card">
+<i class="fa-solid fa-screwdriver-wrench"></i>
+<h3>Maintenance & Repair</h3>
+<p>Regular servicing, filter changes, and repairs to keep your system performing efficiently.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about">
+
+<div class="about-container">
+
+<img src="IMG_2667.webp" alt="ATS Ventilation">
+
+<div>
+
+<h2>
+Reliable. Professional.<br>
+Locally Trusted.
+</h2>
+
+<p>
+ATS Ventilation delivers high-quality ventilation, ducting, and extraction solutions across Sheffield and surrounding areas.
+</p>
+
+<p>
+With a strong focus on workmanship, compliance, and customer satisfaction, we handle projects of all sizes.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section>
+
+<div class="section-title">
+<h2>Recent Projects</h2>
+<p>Real work. Real results.</p>
+</div>
+
+<div class="gallery-grid">
+
+<div class="gallery-item">
+<img src="IMG_2661.jpeg" alt="">
+</div>
+
+<div class="gallery-item">
+<img src="IMG_2662.png" alt="">
+</div>
+
+<div class="gallery-item">
+<img src="IMG_2663.png" alt="">
+</div>
+
+<div class="gallery-item">
+<img src="IMG_2664.png" alt="">
+</div>
+
+<div class="gallery-item">
+<img src="IMG_2666.jpeg" alt="">
+</div>
+
+<div class="gallery-item">
+<img src="IMG_2667.webp" alt="">
+</div>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta">
+
+<h2>Ready to Improve Your Air Quality?</h2>
+
+<p style="max-width:700px; margin:20px auto; font-size:1.2rem;">
+Get in touch today for a free no-obligation quote.
+</p>
+
+<a href="tel:079999013788" class="btn btn-primary" style="font-size:1.3rem; padding:22px 50px;">
+07999 901 3788
+</a>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<h3>ATS Ventilation</h3>
+
+<p>Sheffield • South Yorkshire</p>
+
+<p><strong>07999 901 3788</strong></p>
+
+<p>info@atsventilation.co.uk</p>
+
+<br>
+
+<p>&copy; 2026 ATS Ventilation. All Rights Reserved.</p>
+
+</footer>
+
+<!-- COOKIE -->
+
+<div class="cookie-banner" id="cookieBanner">
+
+<p>
+We use cookies to improve your experience on our website.
+</p>
+
+<button id="acceptCookies">
+Accept
+</button>
+
+</div>
+
+<script>
 
 const menuToggle = document.getElementById('menuToggle');
 const mobileMenu = document.getElementById('mobileMenu');
@@ -627,19 +834,21 @@ menuToggle.addEventListener('click', () => {
     mobileMenu.classList.toggle('active');
 });
 
+const mobileLinks = document.querySelectorAll('.mobile-menu a');
+
+mobileLinks.forEach(link => {
+
+    link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+    });
+
+});
+
 const cookieBanner = document.getElementById('cookieBanner');
 const acceptCookies = document.getElementById('acceptCookies');
 
 acceptCookies.addEventListener('click', () => {
     cookieBanner.style.display = 'none';
-});
-
-const mobileLinks = document.querySelectorAll('.mobile-menu a');
-
-mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-    });
 });
 
 </script>
