@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional ventilation, ducting, and extraction services by ATS Ventilation in Sheffield. Commercial kitchens, domestic systems, and bespoke ductwork.">
+    <title>Our Services | ATS Ventilation</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style> 
+        /* ---------------- CSS VARIABLES & RESET ---------------- */
+        :root {
+            --primary: #111;
+            --accent: #444;
+            --bg-light: #f8f8f8;
+            --border-color: #eee;
+        }
+
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--bg-light);
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* ---------------- HEADER & NAVIGATION ---------------- */
+        .top-header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: white;
+            padding: 18px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 9999;
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #222;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover { 
+            color: #555; 
+        }
+
+        .menu-icon {
+            display: none;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.4rem;
+            background: white;
+            color: #333;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .menu-icon:hover {
+            transform: scale(1.05);
+        }
+    
+        /* ---------------- MOBILE MENU PANEL ---------------- */
+        .mobile-menu {
+            position: fixed;
+            top: 85px;
+            right: -100%;
+            width: 260px;
+            height: 100vh;
+            background: white;
+            z-index: 9998;
+            padding: 40px 30px;
+            transition: right 0.35s ease;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu a {
+            display: block;
+            margin-bottom: 25px;
+            text-decoration: none;
+            color: #111;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* ---------------- SERVICES HERO ---------------- */
+        .services-hero {
+            height: 50vh;
+            min-height: 400px;
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.7)),
+                        url('IMG_2666.jpeg') center/cover no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 78px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            padding: 0 20px;
+        }
+
+        .services-hero h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .services-hero p {
+            font-size: 1.25rem;
+            color: #e5e5e5;
+        }
+
+        /* ---------------- DETAILED SERVICES LIST ---------------- */
+        .detailed-services {
+            padding: 100px 5%;
+            background: white;
+        }
+
+        .service-row {
+            max-width: 1200px;
+            margin: 0 auto 100px;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .service-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .service-row:nth-child(even) {
+            grid-template-columns: 1.2fr 1fr;
+        }
+
+        .service-row:nth-child(even) .service-text-block {
+            grid-column: 2;
+        }
+
+        .service-row:nth-child(even) .service-img-block {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .service-img-block img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .service-text-block i {
+            font-size: 2.8rem;
+            color: #111;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .service-text-block h2 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .service-text-block p {
+            color: #555;
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+        }
+
+        .service-features-list {
+            list-style: none;
+        }
+
+        .service-features-list li {
+            margin-bottom: 10px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-features-list li i {
+            font-size: 1rem;
+            color: #222;
+            margin-bottom: 0;
+        }
+
+        /* ---------------- SECTORS SECTION ---------------- */
+        .sectors {
+            padding: 100px 5%;
+            background: var(--bg-light);
+            text-align: center;
+        }
+
+        .sectors-title {
+            margin-bottom: 60px;
+        }
+
+        .sectors-title h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .sectors-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .sector-card {
+            background: white;
+            padding: 40px 25px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            transition: 0.3s;
+        }
+
+        .sector-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .sector-card i {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: #111;
+            display: block;
+        }
+
+        .sector-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        /* ---------------- CTA SECTION ---------------- */
+        .cta {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 100px 5%;
+        }
+
+        .cta h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            background: white;
+            color: #111;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #f0f0f0;
+            transform: translateY(-3px);
+        }
+
+        /* ---------------- FOOTER ---------------- */
+        footer {
+            background: white;
+            padding: 80px 5% 40px;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        footer h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        /* ---------------- RESPONSIVE BREAKPOINTS ---------------- */
+        @media (max-width: 900px) {
+            nav ul { 
+                display: none; 
+            }
+            .menu-icon { 
+                display: flex; 
+            }
+            .services-hero h1 {
+                font-size: 3rem;
+            }
+            .service-row, .service-row:nth-child(even) {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                margin-bottom: 70px;
+            }
+            .service-row:nth-child(even) .service-text-block {
+                grid-column: 1;
+            }
+            .service-row:nth-child(even) .service-img-block {
+                grid-column: 1;
+                grid-row: auto;
+            }
+            .service-img-block img {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .top-header {
+                padding: 12px 5%;
+            }
+            .logo img {
+                height: 32px;
+            }
+            .menu-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+            .services-hero {
+                margin-top: 72px;
+                height: 40vh;
+            }
+            .mobile-menu {
+                top: 75px;
+            }
+            .service-text-block h2 {
+                font-size: 1.9rem;
+            }
+            .sectors-title h2 {
+                font-size: 2.2rem;
+            }
+            .cta h2 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="top-header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.PNG" alt="ATS Ventilation Logo">
+            </a>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="menu-icon" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div> 
+
+    <section class="services-hero">
+        <div class="hero-content">
+            <h1>Our Services</h1>
+            <p>Bespoke commercial and domestic ventilation, ductwork, and extraction systems across South Yorkshire.</p>
+        </div>
+    </section>
+
+    <section class="detailed-services">
+        
+        <div class="service-row">
+            <div class="service-text-block">
+                <i class="fa-solid fa-building"></i>
+                <h2>Commercial Extraction & Ventilation</h2>
+                <p>We provide full-scale extraction and ductwork solutions optimized for high performance and regulatory compliance. From heavy-duty kitchen canopies to office layout fresh-air balancing, our systems are built around your building’s needs.</p>
+                <ul class="service-features-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Canopy & Hood Installations</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Commercial Kitchen Extraction</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Fresh Air Supply Systems</li>
+                </ul>
+            </div>
+            <div class="service-img-block">
+                <img src="IMG_2661.jpeg" alt="Commercial extraction system installation">
+            </div>
+        </div>
+
+        <div class="service-row">
+            <div class="service-text-block">
+                <i class="fa-solid fa-compass-drafting"></i>
+                <h2>Bespoke Ductwork Installation</h2>
+                <p>No two buildings are alike. We design and install tailor-made ducting systems engineered to maximize efficient airflow throughout tricky configurations, ensuring clean routes and tight seals on every project.</p>
+                <ul class="service-features-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Custom Galvanized Spiral Ducting</li>
+                    <li><i class="fa-solid fa-circle-check"></i> High-Efficiency Inline Fans</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Precision Airflow Balancing</li>
+                </ul>
+            </div>
+            <div class="service-img-block">
+                <img src="IMG_2662.png" alt="Bespoke ventilation ductwork configuration">
+            </div>
+        </div>
+
+        <div class="service-row">
+            <div class="service-text-block">
+                <i class="fa-solid fa-house"></i>
+                <h2>Domestic Ventilation</h2>
+                <p>Keep your home environment healthy, crisp, and completely free from dampness. We install modern
