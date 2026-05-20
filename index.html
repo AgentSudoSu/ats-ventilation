@@ -9,89 +9,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <style> 
-    
-    .menu-icon{
-    width:58px;
-    height:58px;
-
-    border-radius:50%;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    font-size:1.4rem;
-
-    background:white;
-
-    color:#333;
-
-    box-shadow:0 6px 18px rgba(0,0,0,0.15);
-
-    cursor:pointer;
-
-    transition:0.3s;
-}
-
-.menu-icon:hover{
-    transform:scale(1.05);
-}
-
-.menu-icon i{
-    pointer-events:none;
-}
-    
-    .service-card i{
-    font-size:3rem;
-    margin-bottom:20px;
-    color:#222;
-    display:block;
-}
-    
-    /* ---------------- MOBILE MENU ---------------- */
-
-.mobile-menu{
-    position:fixed;
-    top:85px;
-    right:-100%;
-    width:260px;
-    height:100vh;
-    background:white;
-    z-index:9998;
-    padding:40px 30px;
-    transition:0.35s ease;
-    box-shadow:-10px 0 30px rgba(0,0,0,0.1);
-}
-
-.mobile-menu.active{
-    right:0;
-}
-
-.mobile-menu a{
-    display:block;
-    margin-bottom:25px;
-    text-decoration:none;
-    color:#111;
-    font-size:1.1rem;
-    font-weight:600;
-}
-    
+        /* ---------------- CSS VARIABLES & CSS RESET ---------------- */
         :root {
             --primary: #111;
             --accent: #444;
+            --bg-light: #f8f8f8;
+            --border-color: #eee;
         }
 
-        * { margin:0; padding:0; box-sizing:border-box; }
-        html { scroll-behavior: smooth; }
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        html { 
+            scroll-behavior: smooth; 
+        }
+        
         body {
             font-family: 'Montserrat', sans-serif;
-            background: #f8f8f8;
+            background: var(--bg-light);
             color: #222;
             line-height: 1.6;
         }
 
-        /* HEADER */
+        /* ---------------- HEADER & NAVIGATION ---------------- */
         .top-header {
             position: fixed;
             top: 0; left: 0; right: 0;
@@ -101,209 +46,239 @@
             align-items: center;
             justify-content: space-between;
             z-index: 9999;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--border-color);
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .logo {
             font-size: 1.85rem;
             font-weight: 800;
-            color: #111;
+            color: var(--primary);
         }
-        .logo span { color: #555; font-weight: 500; }
+        
+        .logo span { 
+            color: #555; 
+            font-weight: 500; 
+        }
 
         nav ul {
             display: flex;
             gap: 30px;
             list-style: none;
         }
+        
         nav a {
             text-decoration: none;
             color: #222;
             font-weight: 500;
             transition: color 0.3s;
         }
-        nav a:hover { color: #555; }
-
-        .hamburger {
-            display: none;
-            font-size: 1.8rem;
-            cursor: pointer;
+        
+        nav a:hover { 
+            color: #555; 
         }
 
-        /* HERO */
+        .menu-icon {
+            display: none; /* Hidden on desktop */
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.4rem;
+            background: white;
+            color: #333;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-.hero{
-    position:relative;
-    height:100vh;
-    min-height:650px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:white;
-    margin-top:78px;
-    overflow:hidden;
-    background:#000;
-}
+        .menu-icon:hover {
+            transform: scale(1.05);
+        }
 
-.badge{
-    display:inline-block;
-    background:rgba(255,255,255,0.15);
-    backdrop-filter:blur(10px);
-    padding:12px 28px;
-    border-radius:50px;
-    margin-bottom:25px;
-    font-weight:500;
-}
+        .menu-icon i {
+            pointer-events: none;
+        }
+    
+        /* ---------------- MOBILE MENU PANEL ---------------- */
+        .mobile-menu {
+            position: fixed;
+            top: 85px;
+            right: -100%;
+            width: 260px;
+            height: 100vh;
+            background: white;
+            z-index: 9998;
+            padding: 40px 30px;
+            transition: right 0.35s ease;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        }
 
-.hero h1{
-    font-size:4.8rem;
-    font-weight:800;
-    line-height:1.05;
-    margin-bottom:25px;
-}
+        .mobile-menu.active {
+            right: 0;
+        }
 
-.hero p{
-    font-size:1.35rem;
-    max-width:700px;
-    margin:0 auto 40px;
-    color:#e5e5e5;
-}
+        .mobile-menu a {
+            display: block;
+            margin-bottom: 25px;
+            text-decoration: none;
+            color: #111;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
 
-/* SLIDES */
+        /* ---------------- HERO SECTION ---------------- */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 78px;
+            overflow: hidden;
+            background: #000;
+        }
 
-.hero-slide{
-    position:absolute;
-    inset:0;
+        .hero-content {
+            position: relative;
+            z-index: 5;
+            max-width: 900px;
+            padding: 0 20px;
+        }
 
-    background-size:cover;
-    background-position:center;
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 12px 28px;
+            border-radius: 50px;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
 
-    opacity:0;
+        .hero h1 {
+            font-size: 4.8rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
 
-    z-index:1;
+        .hero p {
+            font-size: 1.35rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: #e5e5e5;
+        }
 
-    animation:heroFade 18s infinite linear;
-}
+        .hero-btn-container {
+            margin-top: 40px; 
+            display: flex; 
+            gap: 20px; 
+            justify-content: center; 
+            flex-wrap: wrap;
+        }
 
-/* DARK OVERLAY */
+        /* HERO BACKGROUND CROSSFADE */
+        .hero-slide {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            z-index: 1;
+            animation: heroFade 18s infinite linear;
+        }
 
-.hero-slide::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,0.55);
-}
+        .hero-slide::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+        }
 
-/* IMAGES */
+        .hero-slide:nth-child(1) {
+            background-image: url('C36AF9E7-2DEB-4D93-8836-C620EB7F6ECB.png');
+            animation-delay: 0s;
+        }
 
-.hero-slide:nth-child(1){
-    background-image:url('C36AF9E7-2DEB-4D93-8836-C620EB7F6ECB.png');
-    animation-delay:0s;
-}
+        .hero-slide:nth-child(2) {
+            background-image: url('IMG_2666.jpeg');
+            animation-delay: 6s;
+        }
 
-.hero-slide:nth-child(2){
-    background-image:url('IMG_2666.jpeg');
-    animation-delay:6s;
-}
+        .hero-slide:nth-child(3) {
+            background-image: url('IMG_2667.webp');
+            animation-delay: 12s;
+        }
 
-.hero-slide:nth-child(3){
-    background-image:url('IMG_2667.webp');
-    animation-delay:12s;
-}
+        @keyframes heroFade {
+            0% { opacity: 0; }
+            6% { opacity: 1; }
+            28% { opacity: 1; }
+            34% { opacity: 0; }
+            100% { opacity: 0; }
+        }
 
-/* SMOOTH CROSSFADE */
+        /* ---------------- BUTTONS ---------------- */
+        .btn {
+            display: inline-block;
+            padding: 18px 40px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
 
-@keyframes heroFade{
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
 
-    0%{
-        opacity:0;
-    }
+        .btn-primary:hover {
+            background: #f0f0f0;
+            transform: translateY(-3px);
+        }
 
-    6%{
-        opacity:1;
-    }
+        .btn-secondary {
+            border: 2px solid white;
+            color: white;
+        }
 
-    28%{
-        opacity:1;
-    }
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
 
-    34%{
-        opacity:0;
-    }
+        .about-btn {
+            margin-top: 20px;
+        }
 
-    100%{
-        opacity:0;
-    }
-
-}
-
-.hero-content{
-    position:relative;
-    z-index:5;
-    max-width:900px;
-    padding:0 20px;
-}
-
-/* BUTTONS */
-
-.btn {
-    display: inline-block;
-    padding: 18px 40px;
-    border-radius: 8px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: all 0.3s;
-    font-size: 1.1rem;
-}
-
-.btn-primary {
-    background: white;
-    color: #111;
-}
-
-.btn-primary:hover {
-    background: #f0f0f0;
-    transform: translateY(-3px);
-}
-
-.btn-secondary {
-    border: 2px solid white;
-    color: white;
-}
-
-.btn-secondary:hover {
-    background: white;
-    color: #111;
-}
-
-.hero-content{
-    position:relative;
-    z-index:5;
-
-    max-width:900px;
-    padding:0 20px;
-}
-
-        /* SECTIONS */
+        /* ---------------- REUSABLE SECTIONS ---------------- */
         section {
             padding: 110px 5%;
         }
+        
         .section-title {
             text-align: center;
             margin-bottom: 70px;
         }
+        
         .section-title h2 {
             font-size: 2.8rem;
             margin-bottom: 12px;
         }
+        
         .section-title p {
             color: #666;
             font-size: 1.1rem;
         }
 
-        /* Services */
+        /* ---------------- SERVICES ---------------- */
         .service-grid {
             max-width: 1200px;
             margin: auto;
@@ -311,25 +286,34 @@
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
+        
         .service-card {
             background: white;
-            border: 1px solid #eee;
+            border: 1px solid var(--border-color);
             border-radius: 16px;
             padding: 45px 30px;
             text-align: center;
             transition: all 0.4s;
         }
+        
         .service-card:hover {
             transform: translateY(-12px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.08);
         }
-        .icon { font-size: 3.2rem; margin-bottom: 20px; }
+        
+        .service-card i {
+            font-size: 3.2rem; 
+            margin-bottom: 20px;
+            color: #222;
+            display: block;
+        }
 
-        /* About */
+        /* ---------------- ABOUT ---------------- */
         .about {
-            background: #111;
+            background: var(--primary);
             color: white;
         }
+        
         .about-container {
             max-width: 1200px;
             margin: auto;
@@ -338,12 +322,14 @@
             gap: 70px;
             align-items: center;
         }
+        
         .about img {
             width: 100%;
             border-radius: 16px;
+            object-fit: cover;
         }
 
-        /* Gallery */
+        /* ---------------- GALLERY ---------------- */
         .gallery-grid {
             max-width: 1200px;
             margin: auto;
@@ -351,18 +337,20 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
         }
+        
         .gallery-grid img {
             width: 100%;
             height: 280px;
-            object-fit: cover;
+            object-fit: cover; /* Prevents squishing images */
             border-radius: 16px;
             transition: 0.4s;
         }
+        
         .gallery-grid img:hover {
             transform: scale(1.04);
         }
 
-        /* CTA */
+        /* ---------------- CALL TO ACTION (CTA) ---------------- */
         .cta {
             background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
                         url('IMG_2666.jpeg') center/cover;
@@ -370,85 +358,111 @@
             text-align: center;
         }
 
-        /* Footer */
+        .cta-p {
+            max-width: 700px; 
+            margin: 20px auto; 
+            font-size: 1.2rem;
+        }
+
+        .cta-btn {
+            font-size: 1.3rem; 
+            padding: 22px 50px;
+        }
+
+        /* ---------------- FOOTER ---------------- */
         footer {
-            background: #f8f8f8;
+            background: var(--bg-light);
             padding: 80px 5% 40px;
             text-align: center;
         }
 
-        /* Mobile */
+        /* ---------------- COOKIE BANNER ---------------- */
+        .cookie-banner {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: #111;
+            color: white;
+            padding: 18px 20px;
+            border-radius: 14px;
+            display: none; /* Controlled cleanly by JS logic */
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            z-index: 99999;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        .cookie-banner p {
+            font-size: 0.95rem;
+        }
+
+        .cookie-banner button {
+            border: none;
+            background: white;
+            color: #111;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        /* ---------------- RESPONSIVE BREAKPOINTS ---------------- */
         @media (max-width: 900px) {
-            .hero h1 { font-size: 3.4rem; }
-            nav ul { display: none; }
-            .hamburger { display: block; }
-            .about-container { grid-template-columns: 1fr; }
+            .hero h1 { 
+                font-size: 3.2rem; 
+            }
+            nav ul { 
+                display: none; 
+            }
+            .menu-icon { 
+                display: flex; /* Dynamically swaps the nav view */
+            }
+            .about-container { 
+                grid-template-columns: 1fr; 
+                gap: 40px;
+            }
         }
         
-       
-@media (max-width:768px){
+        @media (max-width: 768px) {
+            .top-header {
+                padding: 12px 5%;
+            }
+            .logo {
+                font-size: 1.4rem;
+            }
+            .menu-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+            .hero {
+                margin-top: 72px;
+            }
+            .mobile-menu {
+                top: 75px;
+            }
+        }
 
-    .top-header{
-        padding:12px 5%;
-    }
-
-    .logo{
-        font-size:1.4rem;
-    }
-
-    .menu-icon{
-        width:50px;
-        height:50px;
-        font-size:1.2rem;
-    }
-
-    .hero{
-        margin-top:72px;
-    }
-
-}
-
-.cookie-banner{
-    position:fixed;
-    bottom:20px;
-    left:20px;
-    right:20px;
-
-    background:#111;
-    color:white;
-
-    padding:18px 20px;
-
-    border-radius:14px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:20px;
-
-    z-index:99999;
-
-    box-shadow:0 10px 30px rgba(0,0,0,0.25);
-}
-
-.cookie-banner p{
-    font-size:0.95rem;
-}
-
-.cookie-banner button{
-    border:none;
-    background:white;
-    color:#111;
-
-    padding:10px 18px;
-
-    border-radius:8px;
-
-    font-weight:700;
-
-    cursor:pointer;
-}
-       
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2.3rem; /* Dynamic downscaling for small devices */
+            }
+            .hero p {
+                font-size: 1.1rem;
+            }
+            .btn {
+                padding: 14px 28px;
+                font-size: 1rem;
+                width: 100%; /* Optimization for easy thumb-tapping */
+                text-align: center;
+            }
+            .hero-btn-container {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -458,57 +472,45 @@
         <div class="logo">ATS <span>VENTILATION</span></div>
         
         <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </nav>
 
         <div class="menu-icon" id="menuToggle">
-    <i class="fa-solid fa-bars"></i>
-</div>
+            <i class="fa-solid fa-bars"></i>
+        </div>
     </header>
 
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="#services">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div> 
+
     <!-- HERO -->
-<section class="hero">
+    <section class="hero">
+        <div class="hero-slide"></div>
+        <div class="hero-slide"></div>
+        <div class="hero-slide"></div>
 
-    <!-- slideshow images -->
-    <div class="hero-slide"></div>
-    <div class="hero-slide"></div>
-    <div class="hero-slide"></div>
-
-    <div class="hero-content">
-
-        <div class="badge">
-            Commercial & Domestic Ventilation Specialists
+        <div class="hero-content">
+            <div class="badge">Commercial & Domestic Ventilation Specialists</div>
+            <h1>Expert Ventilation Solutions in Sheffield</h1>
+            <p>Professional design, installation, and maintenance of ducting and extraction systems across South Yorkshire.</p>
+            
+            <div class="hero-btn-container">
+                <a href="tel:079999013788" class="btn btn-primary">📞 CALL 07999 901 3788</a>
+                <a href="mailto:info@atsventilation.co.uk" class="btn btn-secondary">GET A FREE QUOTE</a>
+            </div>
         </div>
-
-        <h1>
-            Expert Ventilation Solutions<br>
-            in Sheffield
-        </h1>
-
-        <p>
-            Professional design, installation, and maintenance of ducting and extraction systems across South Yorkshire.
-        </p>
-
-        <div style="margin-top:40px; display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
-
-            <a href="tel:079999013788" class="btn btn-primary">
-                📞 CALL 07999 901 3788
-            </a>
-
-            <a href="mailto:info@atsventilation.co.uk" class="btn btn-secondary">
-                GET A FREE QUOTE
-            </a>
-
-        </div>
-
-    </div>
-
     </section>
 
     <!-- SERVICES -->
@@ -550,7 +552,7 @@
                 <h2>Reliable. Professional.<br>Locally Trusted.</h2>
                 <p>ATS Ventilation delivers high-quality ventilation, ducting, and extraction solutions across Sheffield and surrounding areas.</p>
                 <p>With a strong focus on workmanship, compliance, and customer satisfaction, we handle projects of all sizes — from domestic upgrades to full commercial installations.</p>
-                <a href="#" class="btn btn-primary" style="margin-top:20px;">Learn About Us</a>
+                <a href="#" class="btn btn-primary about-btn">Learn About Us</a>
             </div>
         </div>
     </section>
@@ -573,12 +575,8 @@
     <!-- CTA -->
     <section id="contact" class="cta">
         <h2>Ready to Improve Your Air Quality?</h2>
-        <p style="max-width:700px; margin:20px auto; font-size:1.2rem;">
-            Get in touch today for a free no-obligation quote.
-        </p>
-        <a href="tel:079999013788" class="btn btn-primary" style="font-size:1.3rem; padding:22px 50px;">
-            📞 07999 901 3788
-        </a>
+        <p class="cta-p">Get in touch today for a free no-obligation quote.</p>
+        <a href="tel:079999013788" class="btn btn-primary cta-btn">📞 07999 901 3788</a>
     </section>
 
     <!-- FOOTER -->
@@ -591,55 +589,42 @@
         <p>&copy; 2026 ATS Ventilation. All Rights Reserved.</p>
     </footer>
     
-     <!-- MOBILE MENU -->
+    <!-- COOKIE BANNER -->
+    <div class="cookie-banner" id="cookieBanner">
+        <p>We use cookies to improve your experience on our website.</p>
+        <button id="acceptCookies">Accept</button>
+    </div>
 
-<div class="mobile-menu" id="mobileMenu">
+    <!-- JAVASCRIPT -->
+    <script>
+        // Responsive Menu Operations
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-menu a');
 
-    <a href="index.html">Home</a>
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
 
-    <a href="#services">Services</a>
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
 
-    <a href="gallery.html">Gallery</a>
+        // Smart Persistent Cookie Banner Logic
+        const cookieBanner = document.getElementById('cookieBanner');
+        const acceptCookies = document.getElementById('acceptCookies');
 
-    <a href="about.html">About</a>
+        // Show banner only if user hasn't accepted it before
+        if (!localStorage.getItem('atsCookiesAccepted')) {
+            cookieBanner.style.display = 'flex';
+        }
 
-    <a href="contact.html">Contact</a>
-
-</div> 
-
-<div class="cookie-banner" id="cookieBanner">
-    <p>
-        We use cookies to improve your experience on our website.
-    </p>
-
-    <button id="acceptCookies">Accept</button>
-</div>
-
-     <script>
-
-const menuToggle = document.getElementById('menuToggle');
-const mobileMenu = document.getElementById('mobileMenu');
-
-menuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('active');
-});
-
-const cookieBanner = document.getElementById('cookieBanner');
-const acceptCookies = document.getElementById('acceptCookies');
-
-acceptCookies.addEventListener('click', () => {
-    cookieBanner.style.display = 'none';
-});
-
-const mobileLinks = document.querySelectorAll('.mobile-menu a');
-
-mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-    });
-});
-
-</script>
-
+        acceptCookies.addEventListener('click', () => {
+            localStorage.setItem('atsCookiesAccepted', 'true');
+            cookieBanner.style.display = 'none';
+        });
+    </script>
 </body>
 </html>
