@@ -1,377 +1,375 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Take a look at recent commercial kitchen extraction, domestic ventilation, and bespoke ductwork installations completed by ATS Ventilation across South Yorkshire.">
+    <title>Gallery | ATS Ventilation</title>
 
-<title>Gallery | ATS Ventilation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* ---------------- CSS VARIABLES & RESET ---------------- */
+        :root {
+            --primary: #111;
+            --accent: #444;
+            --bg-light: #f8f8f8;
+            --border-color: #eee;
+        }
 
-<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-:root{
-    --primary:#111;
-}
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--bg-light);
+            color: #222;
+            line-height: 1.6;
+        }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+        /* ---------------- HEADER & NAVIGATION ---------------- */
+        .top-header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: white;
+            padding: 18px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 9999;
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
 
-body{
-    font-family:'Montserrat',sans-serif;
-    background:#f5f5f5;
-    color:#111;
-}
+        .logo {
+            display: flex;
+            align-items: center;
+        }
 
-/* HEADER */
+        .logo img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
 
-.top-header{
-    position:fixed;
-    top:0;
-    left:0;
-    right:0;
-    background:white;
-    padding:18px 5%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    z-index:9999;
-    border-bottom:1px solid #eee;
-    box-shadow:0 2px 10px rgba(0,0,0,0.05);
-}
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
 
-.logo {
-    display: flex;
-    align-items: center;
-}
+        nav a {
+            text-decoration: none;
+            color: #222;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
 
-.logo img {
-    height: 40px; /* Perfect, sleek scale for desktop views matching index.html */
-    width: auto;
-    display: block;
-}
+        nav a:hover { 
+            color: #555; 
+        }
 
-/* DESKTOP NAV */
+        .menu-icon {
+            display: none;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.4rem;
+            background: white;
+            color: #333;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-nav ul{
-    display:flex;
-    gap:30px;
-    list-style:none;
-}
+        .menu-icon:hover {
+            transform: scale(1.05);
+        }
 
-nav a{
-    text-decoration:none;
-    color:#222;
-    font-weight:500;
-}
+        .menu-icon i {
+            pointer-events: none;
+        }
 
-/* MENU ICON */
+        /* ---------------- MOBILE MENU PANEL ---------------- */
+        .mobile-menu {
+            position: fixed;
+            top: 85px;
+            right: -100%;
+            width: 260px;
+            height: 100vh;
+            background: white;
+            z-index: 9998;
+            padding: 40px 30px;
+            transition: right 0.35s ease;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        }
 
-.menu-icon{
-    width:58px;
-    height:58px;
-    border-radius:50%;
-    display:none;
-    justify-content:center;
-    align-items:center;
-    font-size:1.4rem;
-    background:white;
-    color:#333;
-    box-shadow:0 6px 18px rgba(0,0,0,0.15);
-    cursor:pointer;
-    transition:0.3s;
-}
+        .mobile-menu.active {
+            right: 0;
+        }
 
-.menu-icon:hover{
-    transform:scale(1.05);
-}
+        .mobile-menu a {
+            display: block;
+            margin-bottom: 25px;
+            text-decoration: none;
+            color: #111;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
 
-.menu-icon i{
-    pointer-events:none;
-}
+        /* ---------------- OVERLAY ---------------- */
+        .menu-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.45);
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s ease;
+            z-index: 9997;
+        }
 
-/* MOBILE MENU */
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
 
-.mobile-menu{
-    position:fixed;
-    top:0;
-    right:-100%;
-    width:280px;
-    height:100vh;
-    background:white;
-    z-index:10001;
-    padding:120px 35px 40px;
-    transition:0.35s ease;
-    box-shadow:-10px 0 30px rgba(0,0,0,0.1);
-}
+        /* ---------------- GALLERY HERO ---------------- */
+        .gallery-hero {
+            padding-top: 170px;
+            padding-bottom: 60px;
+            text-align: center;
+        }
 
-.mobile-menu.active{
-    right:0;
-}
+        .gallery-hero h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
 
-.mobile-menu a{
-    display:block;
-    margin-bottom:28px;
-    text-decoration:none;
-    color:#111;
-    font-size:1.2rem;
-    font-weight:700;
-}
+        .gallery-hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #555;
+            font-size: 1.25rem;
+            line-height: 1.7;
+            padding: 0 20px;
+        }
 
-/* OVERLAY */
+        /* ---------------- GALLERY GRID ---------------- */
+        .gallery-section {
+            padding: 0 8px 100px;
+        }
 
-.menu-overlay{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,0.45);
-    opacity:0;
-    visibility:hidden;
-    transition:0.3s ease;
-    z-index:10000;
-}
+        .gallery-grid {
+            max-width: 1400px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
 
-.menu-overlay.active{
-    opacity:1;
-    visibility:visible;
-}
+        .gallery-item {
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            background: #ddd;
+            border-radius: 8px;
+        }
 
-/* HERO */
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: 0.35s ease;
+        }
 
-.gallery-hero{
-    padding-top:170px;
-    padding-bottom:60px;
-    text-align:center;
-}
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
 
-.gallery-hero h1{
-    font-size:4rem;
-    margin-bottom:20px;
-}
+        /* ---------------- FOOTER ---------------- */
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 80px 20px 50px;
+        }
 
-.gallery-hero p{
-    max-width:700px;
-    margin:auto;
-    color:#666;
-    font-size:1.1rem;
-    line-height:1.7;
-    padding:0 20px;
-}
+        footer h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
 
-/* GALLERY */
+        footer p {
+            color: #bbb;
+            margin-bottom: 10px;
+        }
 
-.gallery-section{
-    padding:0 8px 100px;
-}
+        /* ---------------- RESPONSIVE BREAKPOINTS ---------------- */
+        @media (max-width: 900px) {
+            nav ul {
+                display: none;
+            }
+            .menu-icon {
+                display: flex;
+            }
+            .gallery-hero h1 {
+                font-size: 3rem;
+            }
+        }
 
-.gallery-grid{
-    max-width:1400px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:8px;
-}
-
-.gallery-item{
-    aspect-ratio:1/1;
-    overflow:hidden;
-    background:#ddd;
-}
-
-.gallery-item img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
-    transition:0.35s ease;
-}
-
-.gallery-item:hover img{
-    transform:scale(1.05);
-}
-
-/* FOOTER */
-
-footer{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:80px 20px 50px;
-}
-
-footer h3{
-    font-size:2rem;
-    margin-bottom:15px;
-}
-
-footer p{
-    color:#bbb;
-    margin-bottom:10px;
-}
-
-/* MOBILE */
-
-@media(max-width:900px){
-    nav ul{
-        display:none;
-    }
-    .menu-icon{
-        display:flex;
-    }
-}
-
-@media(max-width:768px){
-    .top-header{
-        padding:12px 5%;
-    }
-    .logo img {
-        height: 32px; /* Pulls the cropped logo back to a perfectly balanced mobile size */
-    }
-    .menu-icon{
-        width:50px;
-        height:50px;
-        font-size:1.2rem;
-    }
-    .gallery-hero{
-        padding-top:130px;
-    }
-    .gallery-hero h1{
-        font-size:2.8rem;
-    }
-    .gallery-hero p{
-        font-size:1rem;
-    }
-    .gallery-grid{
-        grid-template-columns:repeat(3,1fr);
-        gap:4px;
-    }
-    .mobile-menu{
-        width:75%;
-    }
-}
-
-</style>
+        @media (max-width: 768px) {
+            .top-header {
+                padding: 12px 5%;
+            }
+            .logo img {
+                height: 32px;
+            }
+            .menu-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+            .gallery-hero {
+                padding-top: 130px;
+            }
+            .gallery-hero h1 {
+                font-size: 2.8rem;
+            }
+            .gallery-hero p {
+                font-size: 1rem;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr); /* Clean 2x2 grid structure on mobile phone panels */
+                gap: 4px;
+            }
+            .mobile-menu {
+                top: 75px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header class="top-header">
-    <div class="logo">
-        <a href="index.html">
-            <img src="logo.PNG" alt="ATS Ventilation Logo">
-        </a>
+    <header class="top-header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.PNG" alt="ATS Ventilation Logo">
+            </a>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="menu-icon" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
     </div>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+    <div class="menu-overlay" id="menuOverlay"></div>
 
-    <div class="menu-icon" id="menuToggle">
-        <i class="fa-solid fa-bars"></i>
-    </div>
-</header>
+    <section class="gallery-hero">
+        <h1>Our Gallery</h1>
+        <p>Take a look at some of our recent ventilation, ducting, and extraction projects completed to the highest standards.</p>
+    </section>
 
-<div class="mobile-menu" id="mobileMenu">
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-</div>
+    <section class="gallery-section">
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="Img1.PNG" alt="Ductwork configuration snippet">
+            </div>
+            <div class="gallery-item">
+                <img src="Img2.PNG" alt="Ventilation system asset layout">
+            </div>
+            <div class="gallery-item">
+                <img src="IMG_2661.jpeg" alt="Commercial extraction system canopy installation">
+            </div>
+            <div class="gallery-item">
+                <img src="IMG_2662.png" alt="Galvanized spiral ductwork configuration details">
+            </div>
+            <div class="gallery-item">
+                <img src="IMG_2663.png" alt="Domestic inline fan air setup configuration">
+            </div>
+            <div class="gallery-item">
+                <img src="IMG_2664.png" alt="Custom ventilation airflow balancing structure">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery7.jpg" alt="South Yorkshire ductwork installation context">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery8.jpg" alt="Commercial kitchen extraction setup snapshot">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery9.jpg" alt="Ventilation canopy systems optimization framework">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery10.jpg" alt="Custom air balancer routing details">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery11.jpg" alt="Domestic kitchen extractor fan setup snippet">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery12.jpg" alt="Commercial spiral ductwork routing design close-up">
+            </div>
+        </div>
+    </section>
 
-<div class="menu-overlay" id="menuOverlay"></div>
+    <footer>
+        <h3>ATS Ventilation</h3>
+        <p>Sheffield • South Yorkshire</p>
+        <p>07999 901 3788</p>
+        <p>info@atsventilation.co.uk</p>
+        <br>
+        <p>&copy; 2026 ATS Ventilation. All Rights Reserved.</p>
+    </footer>
 
-<section class="gallery-hero">
-    <h1>Our Gallery</h1>
-    <p>
-        Take a look at some of our recent ventilation,
-        ducting and extraction projects.
-    </p>
-</section>
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const mobileLinks = document.querySelectorAll('.mobile-menu a');
 
-<section class="gallery-section">
-    <div class="gallery-grid">
-        <div class="gallery-item">
-            <img src="Img1.PNG" alt="">
-        </div>
-        <div class="gallery-item">
-            <img src="Img2.PNG" alt="">
-        </div>
-        <div class="gallery-item">
-            <img src="IMG_2661.jpeg" alt="">
-        </div>
-        <div class="gallery-item">
-            <img src="IMG_2662.png" alt="">
-        </div>
-        <div class="gallery-item">
-            <img src="IMG_2663.png" alt="">
-        </div>
-        <div class="gallery-item">
-            <img src="IMG_2664.png" alt="">
-        </div>
-        <div class="gallery-item">
-            <img src="images/gallery7.jpg" alt="">
-        </div>
-        <div class="gallery-item">
-            <img src="images/gallery8.jpg" alt="">
-        </div>
-        <div class="gallery-item">
-            <img src="images/gallery9.jpg" alt="">
-        </div>
-        <div class="gallery-item">
-            <img src="images/gallery10.jpg" alt="">
-        </div>
-        <div class="gallery-item">
-            <img src="images/gallery11.jpg" alt="">
-        </div>
-        <div class="gallery-item">
-            <img src="images/gallery12.jpg" alt="">
-        </div>
-    </div>
-</section>
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+        });
 
-<footer>
-    <h3>ATS Ventilation</h3>
-    <p>Sheffield • South Yorkshire</p>
-    <p>07999 901 3788</p>
-    <p>info@atsventilation.co.uk</p>
-    <br>
-    <p>&copy; 2026 ATS Ventilation. All Rights Reserved.</p>
-</footer>
+        menuOverlay.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+        });
 
-<script>
-const menuToggle = document.getElementById('menuToggle');
-const mobileMenu = document.getElementById('mobileMenu');
-const menuOverlay = document.getElementById('menuOverlay');
-
-menuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('active');
-    menuOverlay.classList.toggle('active');
-});
-
-menuOverlay.addEventListener('click', () => {
-    mobileMenu.classList.remove('active');
-    menuOverlay.classList.remove('active');
-});
-
-const mobileLinks = document.querySelectorAll('.mobile-menu a');
-mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-        menuOverlay.classList.remove('active');
-    });
-});
-</script>
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+            });
+        });
+    </script>
 
 </body>
 </html>
