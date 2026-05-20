@@ -468,4 +468,70 @@
             <div class="service-text-block">
                 <i class="fa-solid fa-house"></i>
                 <h2>Domestic Ventilation</h2>
-                <p>Keep your home environment healthy, crisp, and completely free from dampness. We install modern
+                <p>Keep your home environment healthy, crisp, and completely free from dampness. We install modern extractor fans, bathroom setups, and custom domestic duct systems tailored to protect your living spaces from condensation.</p>
+                <ul class="service-features-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Bathroom & Kitchen Extractor Fans</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Condensation & Damp Control</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Heat Recovery Solutions</li>
+                </ul>
+            </div>
+            <div class="service-img-block">
+                <img src="IMG_2663.jpeg" alt="Domestic home extractor fan system installation">
+            </div>
+        </div>
+    </section>
+
+    <section class="sectors">
+        <div class="sectors-title">
+            <h2>Sectors We Serve</h2>
+        </div>
+        <div class="sectors-grid">
+            <div class="sector-card">
+                <i class="fa-solid fa-utensils"></i>
+                <h3>Restaurants & Cafes</h3>
+            </div>
+            <div class="sector-card">
+                <i class="fa-solid fa-shop"></i>
+                <h3>Retail & Offices</h3>
+            </div>
+            <div class="sector-card">
+                <i class="fa-solid fa-industry"></i>
+                <h3>Industrial Units</h3>
+            </div>
+            <div class="sector-card">
+                <i class="fa-solid fa-home"></i>
+                <h3>Residential Properites</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Need a Bespoke Solution?</h2>
+        <p>Get in touch today for professional advice and a comprehensive free quote.</p>
+        <a href="contact.html" class="btn">Get a Free Quote</a>
+    </section>
+
+    <footer>
+        <h3>ATS Ventilation</h3>
+        <p>Sheffield, South Yorkshire</p>
+        <p>&copy; 2026 ATS Ventilation. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Responsive Menu Operations
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-menu a');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
