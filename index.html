@@ -69,7 +69,7 @@ body{
 /* LOGO */
 
 .logo img{
-    height:42px;
+    height:75px;
     width:auto;
     display:block;
 }
@@ -554,7 +554,7 @@ footer{
     }
 
     .logo img{
-        height:34px;
+        height:55px;
     }
 
     .menu-icon{
@@ -581,9 +581,51 @@ footer{
     }
 
     .cookie-banner{
-        flex-direction:column;
-        align-items:flex-start;
-    }
+    position:fixed;
+
+    bottom:20px;
+    left:20px;
+    right:20px;
+
+    background:#111;
+    color:white;
+
+    padding:16px 18px;
+
+    border-radius:14px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:20px;
+
+    z-index:99999;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.25);
+
+    max-width:500px;
+}
+
+.cookie-banner p{
+    font-size:0.9rem;
+    line-height:1.5;
+}
+
+.cookie-banner button{
+    border:none;
+    background:white;
+    color:#111;
+
+    padding:10px 18px;
+
+    border-radius:10px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    white-space:nowrap;
 }
 
 </style>
