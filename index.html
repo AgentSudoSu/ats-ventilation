@@ -51,14 +51,14 @@
         }
 
         .logo {
-            font-size: 1.85rem;
-            font-weight: 800;
-            color: var(--primary);
+            display: flex;
+            align-items: center;
         }
-        
-        .logo span { 
-            color: #555; 
-            font-weight: 500; 
+
+        .logo img {
+            height: 38px; /* Matches the visual profile of your original 1.85rem text */
+            width: auto;
+            display: block;
         }
 
         nav ul {
@@ -341,7 +341,7 @@
         .gallery-grid img {
             width: 100%;
             height: 280px;
-            object-fit: cover; /* Prevents squishing images */
+            object-fit: cover; 
             border-radius: 16px;
             transition: 0.4s;
         }
@@ -386,7 +386,7 @@
             color: white;
             padding: 18px 20px;
             border-radius: 14px;
-            display: none; /* Controlled cleanly by JS logic */
+            display: none; 
             justify-content: space-between;
             align-items: center;
             gap: 20px;
@@ -417,7 +417,7 @@
                 display: none; 
             }
             .menu-icon { 
-                display: flex; /* Dynamically swaps the nav view */
+                display: flex; 
             }
             .about-container { 
                 grid-template-columns: 1fr; 
@@ -429,8 +429,8 @@
             .top-header {
                 padding: 12px 5%;
             }
-            .logo {
-                font-size: 1.4rem;
+            .logo img {
+                height: 28px; /* Scales down text match for mobile menu layouts */
             }
             .menu-icon {
                 width: 50px;
@@ -447,7 +447,7 @@
 
         @media (max-width: 600px) {
             .hero h1 {
-                font-size: 2.3rem; /* Dynamic downscaling for small devices */
+                font-size: 2.3rem; 
             }
             .hero p {
                 font-size: 1.1rem;
@@ -455,7 +455,7 @@
             .btn {
                 padding: 14px 28px;
                 font-size: 1rem;
-                width: 100%; /* Optimization for easy thumb-tapping */
+                width: 100%; 
                 text-align: center;
             }
             .hero-btn-container {
@@ -469,7 +469,11 @@
 
     <!-- HEADER -->
     <header class="top-header">
-        <div class="logo">ATS <span>VENTILATION</span></div>
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.PNG" alt="ATS Ventilation Logo">
+            </a>
+        </div>
         
         <nav>
             <ul>
