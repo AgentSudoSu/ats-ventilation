@@ -51,9 +51,11 @@ body{
     left:0;
     right:0;
 
+    height:110px;
+
     background:white;
 
-    padding:18px 5%;
+    padding:0 5%;
 
     display:flex;
     align-items:center;
@@ -69,9 +71,13 @@ body{
 /* LOGO */
 
 .logo img{
-    height:75px;
+    height:140px;
     width:auto;
     display:block;
+
+    transform:scale(2.8);
+
+    transform-origin:left center;
 }
 
 /* NAVIGATION */
@@ -550,22 +556,20 @@ footer{
 @media(max-width:768px){
 
     .top-header{
-        padding:12px 5%;
+        height:95px;
+        padding:0 20px;
     }
 
     .logo img{
-        height:55px;
-    }
-
-    .menu-icon{
-        width:50px;
-        height:50px;
-        font-size:1.2rem;
+        height:90px;
+        transform:scale(2.3);
     }
 
     .hero{
-        margin-top:72px;
+        margin-top:95px;
     }
+
+}
 
     .hero h1{
         font-size:2.8rem;
