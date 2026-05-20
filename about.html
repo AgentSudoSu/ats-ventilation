@@ -8,7 +8,6 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
@@ -47,15 +46,15 @@ body{
     box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 
-.logo{
-    font-size:1.85rem;
-    font-weight:800;
-    color:#111;
+.logo {
+    display: flex;
+    align-items: center;
 }
 
-.logo span{
-    color:#555;
-    font-weight:500;
+.logo img {
+    height: 40px; /* Perfect, sleek scale for desktop views matching index, gallery and contact */
+    width: auto;
+    display: block;
 }
 
 nav ul{
@@ -76,7 +75,7 @@ nav a{
     width:58px;
     height:58px;
     border-radius:50%;
-    display:flex;
+    display:none; /* Hidden by default on desktop viewports */
     justify-content:center;
     align-items:center;
     font-size:1.4rem;
@@ -119,18 +118,14 @@ nav a{
 .about-hero{
     height:60vh;
     min-height:500px;
-
     background:
     linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.7)),
     url('IMG_2666.jpeg') center/cover no-repeat;
-
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
-
     color:white;
-
     margin-top:78px;
 }
 
@@ -159,7 +154,6 @@ nav a{
 .about-container{
     max-width:1200px;
     margin:auto;
-
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:70px;
@@ -244,41 +238,35 @@ footer{
 /* MOBILE */
 
 @media(max-width:900px){
-
     nav ul{
         display:none;
     }
-
+    .menu-icon{
+        display:flex;
+    }
     .about-container{
         grid-template-columns:1fr;
     }
-
     .features{
         grid-template-columns:1fr;
     }
-
     .about-hero h1{
         font-size:3rem;
     }
-
 }
 
 @media(max-width:768px){
-
     .top-header{
         padding:12px 5%;
     }
-
-    .logo{
-        font-size:1.4rem;
+    .logo img {
+        height: 32px; /* Pulls cropped logo container down on phone layouts */
     }
-
     .menu-icon{
         width:50px;
         height:50px;
         font-size:1.2rem;
     }
-
 }
 
 </style>
@@ -287,156 +275,120 @@ footer{
 <body>
 
 <header class="top-header">
+    <div class="logo">
+        <a href="index.html">
+            <img src="logo.PNG" alt="ATS Ventilation Logo">
+        </a>
+    </div>
 
-<div class="logo">
-ATS <span>VENTILATION</span>
-</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-<nav>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="gallery.html">Gallery</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
-
-<div class="menu-icon" id="menuToggle">
-<i class="fa-solid fa-bars"></i>
-</div>
-
+    <div class="menu-icon" id="menuToggle">
+        <i class="fa-solid fa-bars"></i>
+    </div>
 </header>
 
-<!-- MOBILE MENU -->
-
 <div class="mobile-menu" id="mobileMenu">
-
-<a href="index.html">Home</a>
-<a href="services.html">Services</a>
-<a href="gallery.html">Gallery</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
 </div>
-
-<!-- HERO -->
 
 <section class="about-hero">
-
-<div class="about-hero-content">
-
-<h1>About ATS Ventilation</h1>
-
-<p>
-Professional ventilation, ducting & extraction specialists delivering high-quality commercial and domestic installations across Sheffield and surrounding areas.
-</p>
-
-</div>
-
+    <div class="about-hero-content">
+        <h1>About ATS Ventilation</h1>
+        <p>
+            Professional ventilation, ducting & extraction specialists delivering high-quality commercial and domestic installations across Sheffield and surrounding areas.
+        </p>
+    </div>
 </section>
-
-<!-- ABOUT -->
 
 <section class="about-section">
+    <div class="about-container">
+        <img src="AE2617DE-8A21-4400-9E0D-B8D0FBD6FFA5.jpeg" alt="ATS Ventilation Installation">
 
-<div class="about-container">
+        <div class="about-text">
+            <h2>Reliable Ventilation Specialists</h2>
+            <p>
+                ATS Ventilation provides professional ventilation and extraction solutions for homes, businesses, commercial kitchens and industrial properties throughout Sheffield and South Yorkshire.
+            </p>
+            <p>
+                We pride ourselves on delivering clean workmanship, reliable service and high-quality installations tailored to every project.
+            </p>
+            <p>
+                From bespoke ducting systems to full extraction installs, every project is completed with attention to detail and long-lasting performance in mind.
+            </p>
 
-<img src="AE2617DE-8A21-4400-9E0D-B8D0FBD6FFA5.jpeg" alt="ATS Ventilation Installation">
+            <div class="features">
+                <div class="feature-box">
+                    <i class="fa-solid fa-check"></i>
+                    <h3>Professional Service</h3>
+                    <p>Reliable workmanship with attention to detail on every installation.</p>
+                </div>
 
-<div class="about-text">
+                <div class="feature-box">
+                    <i class="fa-solid fa-fan"></i>
+                    <h3>Custom Systems</h3>
+                    <p>Bespoke ventilation and extraction systems tailored to your property.</p>
+                </div>
 
-<h2>Reliable Ventilation Specialists</h2>
+                <div class="feature-box">
+                    <i class="fa-solid fa-building"></i>
+                    <h3>Commercial & Domestic</h3>
+                    <p>Experienced in projects ranging from homes to commercial buildings.</p>
+                </div>
 
-<p>
-ATS Ventilation provides professional ventilation and extraction solutions for homes, businesses, commercial kitchens and industrial properties throughout Sheffield and South Yorkshire.
-</p>
-
-<p>
-We pride ourselves on delivering clean workmanship, reliable service and high-quality installations tailored to every project.
-</p>
-
-<p>
-From bespoke ducting systems to full extraction installs, every project is completed with attention to detail and long-lasting performance in mind.
-</p>
-
-<div class="features">
-
-<div class="feature-box">
-<i class="fa-solid fa-check"></i>
-<h3>Professional Service</h3>
-<p>Reliable workmanship with attention to detail on every installation.</p>
-</div>
-
-<div class="feature-box">
-<i class="fa-solid fa-fan"></i>
-<h3>Custom Systems</h3>
-<p>Bespoke ventilation and extraction systems tailored to your property.</p>
-</div>
-
-<div class="feature-box">
-<i class="fa-solid fa-building"></i>
-<h3>Commercial & Domestic</h3>
-<p>Experienced in projects ranging from homes to commercial buildings.</p>
-</div>
-
-<div class="feature-box">
-<i class="fa-solid fa-location-dot"></i>
-<h3>Sheffield Based</h3>
-<p>Local trusted ventilation specialists serving South Yorkshire.</p>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
+                <div class="feature-box">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h3>Sheffield Based</h3>
+                    <p>Local trusted ventilation specialists serving South Yorkshire.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
-
-<!-- CTA -->
 
 <section class="cta">
-
-<h2>Need a Ventilation Specialist?</h2>
-
-<p>
-Get in touch today for a free no-obligation quote.
-</p>
-
-<a href="tel:079999013788" class="btn">
-📞 CALL NOW
-</a>
-
+    <h2>Need a Ventilation Specialist?</h2>
+    <p>Get in touch today for a free no-obligation quote.</p>
+    <a href="tel:079999013788" class="btn">
+        📞 CALL NOW
+    </a>
 </section>
 
-<!-- FOOTER -->
-
 <footer>
-
-<h3>ATS Ventilation</h3>
-
-<p>Sheffield • South Yorkshire</p>
-
-<p><strong>07999 901 3788</strong></p>
-
-<p>info@atsventilation.co.uk</p>
-
-<br>
-
-<p>&copy; 2026 ATS Ventilation. All Rights Reserved.</p>
-
+    <h3>ATS Ventilation</h3>
+    <p>Sheffield • South Yorkshire</p>
+    <p><strong>07999 901 3788</strong></p>
+    <p>info@atsventilation.co.uk</p>
+    <br>
+    <p>&copy; 2026 ATS Ventilation. All Rights Reserved.</p>
 </footer>
 
 <script>
-
 const menuToggle = document.getElementById('menuToggle');
 const mobileMenu = document.getElementById('mobileMenu');
 
 menuToggle.addEventListener('click', () => {
-mobileMenu.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
 });
 
+const mobileLinks = document.querySelectorAll('.mobile-menu a');
+mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+    });
+});
 </script>
 
 </body>
