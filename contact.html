@@ -1,787 +1,435 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <meta name="description" content="Contact ATS Ventilation for commercial and domestic ventilation, ducting and extraction systems across Sheffield and South Yorkshire.">
-
 <title>Contact ATS Ventilation</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 
 /* RESET */
-
 *{
-
     margin:0;
-
     padding:0;
-
     box-sizing:border-box;
-
 }
 
 body{
-
     font-family:'Montserrat', sans-serif;
-
     background:#f8f8f8;
-
     color:#222;
-
     overflow-x:hidden;
-
 }
 
 /* HEADER */
-
 .top-header{
-
     position:fixed;
-
     top:0;
-
     left:0;
-
     right:0;
-
     background:white;
-
     padding:18px 5%;
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
     z-index:9999;
-
     border-bottom:1px solid #eee;
-
     box-shadow:0 2px 10px rgba(0,0,0,0.05);
-
 }
 
-.logo{
-
-    font-size:1.85rem;
-
-    font-weight:800;
-
-    color:#111;
-
+.logo {
+    display: flex;
+    align-items: center;
 }
 
-.logo span{
-
-    color:#555;
-
-    font-weight:500;
-
+.logo img {
+    height: 40px; /* Perfect, sleek scale for desktop views matching index and gallery */
+    width: auto;
+    display: block;
 }
 
 /* NAV */
-
 nav ul{
-
     display:flex;
-
     gap:30px;
-
     list-style:none;
-
 }
 
 nav a{
-
     text-decoration:none;
-
     color:#222;
-
     font-weight:500;
-
     transition:0.3s;
-
 }
 
 nav a:hover{
-
     color:#666;
-
 }
 
 /* MENU BUTTON */
-
 .menu-icon{
-
     width:58px;
-
     height:58px;
-
     border-radius:50%;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-size:1.4rem;
-
-    background:white;
-
-    color:#333;
-
-    box-shadow:0 6px 18px rgba(0,0,0,0.15);
-
-    cursor:pointer;
-
-    transition:0.3s;
-
     display:none;
-
+    justify-content:center;
+    align-items:center;
+    font-size:1.4rem;
+    background:white;
+    color:#333;
+    box-shadow:0 6px 18px rgba(0,0,0,0.15);
+    cursor:pointer;
+    transition:0.3s;
 }
 
 .menu-icon:hover{
-
     transform:scale(1.05);
-
 }
 
 /* MOBILE MENU */
-
 .mobile-menu{
-
     position:fixed;
-
     top:85px;
-
     right:-100%;
-
     width:260px;
-
     height:100vh;
-
     background:white;
-
     z-index:9998;
-
     padding:40px 30px;
-
     transition:0.35s ease;
-
     box-shadow:-10px 0 30px rgba(0,0,0,0.1);
-
 }
 
 .mobile-menu.active{
-
     right:0;
-
 }
 
 .mobile-menu a{
-
     display:block;
-
     margin-bottom:25px;
-
     text-decoration:none;
-
     color:#111;
-
     font-size:1.1rem;
-
     font-weight:600;
-
 }
 
 /* HERO */
-
 .contact-hero{
-
     padding:220px 5% 120px;
-
     text-align:center;
-
 }
 
 .contact-hero h1{
-
     font-size:5rem;
-
     font-weight:800;
-
     margin-bottom:25px;
-
 }
 
 .contact-hero p{
-
     max-width:850px;
-
     margin:auto;
-
     font-size:1.35rem;
-
     color:#666;
-
     line-height:1.7;
-
 }
 
 /* CONTACT SECTION */
-
 .contact-section{
-
     padding:0 5% 120px;
-
 }
 
 .contact-container{
-
     max-width:1200px;
-
     margin:auto;
-
     background:white;
-
     border-radius:24px;
-
     padding:60px;
-
     display:grid;
-
     grid-template-columns:1fr 1fr;
-
     gap:60px;
-
     box-shadow:0 10px 40px rgba(0,0,0,0.06);
-
 }
 
 /* FORM */
-
 form{
-
     display:flex;
-
     flex-direction:column;
-
     gap:22px;
-
 }
 
 form input,
-
 form textarea{
-
     width:100%;
-
     padding:18px;
-
     border:1px solid #ddd;
-
     border-radius:12px;
-
     font-size:1rem;
-
     font-family:'Montserrat', sans-serif;
-
     transition:0.3s;
-
 }
 
 form input:focus,
-
 form textarea:focus{
-
     outline:none;
-
     border-color:#111;
-
 }
 
 form textarea{
-
     min-height:220px;
-
     resize:vertical;
-
 }
 
 form button{
-
     background:#111;
-
     color:white;
-
     border:none;
-
     padding:18px;
-
     border-radius:12px;
-
     font-size:1rem;
-
     font-weight:700;
-
     cursor:pointer;
-
     transition:0.3s;
-
 }
 
 form button:hover{
-
     background:#333;
-
 }
 
 /* CONTACT INFO */
-
 .contact-info{
-
     display:flex;
-
     flex-direction:column;
-
     justify-content:center;
-
 }
 
 .contact-info h2{
-
     font-size:2.4rem;
-
     margin-bottom:25px;
-
 }
 
 .contact-info p{
-
     font-size:1.1rem;
-
     color:#666;
-
     line-height:1.8;
-
     margin-bottom:18px;
-
 }
 
 .contact-info strong{
-
     color:#111;
-
 }
 
 .contact-info a{
-
     color:#111;
-
     text-decoration:none;
-
     font-weight:600;
-
 }
 
 /* FOOTER */
-
 footer{
-
     background:#fff;
-
     padding:70px 5% 40px;
-
     text-align:center;
-
     border-top:1px solid #eee;
-
 }
 
 footer h3{
-
     font-size:2rem;
-
     margin-bottom:15px;
-
 }
 
 footer p{
-
     margin-bottom:10px;
-
     color:#666;
-
 }
 
 /* MOBILE */
-
 @media(max-width:950px){
-
     nav ul{
-
         display:none;
-
     }
-
     .menu-icon{
-
         display:flex;
-
     }
-
     .contact-hero h1{
-
         font-size:3.3rem;
-
     }
-
     .contact-container{
-
         grid-template-columns:1fr;
-
         padding:35px;
-
     }
-
 }
 
 @media(max-width:768px){
-
     .top-header{
-
-        padding:14px 5%;
-
+        padding:12px 5%;
     }
-
-    .logo{
-
-        font-size:1.4rem;
-
+    .logo img {
+        height: 32px; /* Pulls the cropped logo back to balanced mobile proportions */
     }
-
     .menu-icon{
-
         width:50px;
-
         height:50px;
-
         font-size:1.2rem;
-
     }
-
     .contact-hero{
-
         padding-top:180px;
-
     }
-
     .contact-hero h1{
-
         font-size:2.7rem;
-
     }
-
     .contact-hero p{
-
         font-size:1.1rem;
-
     }
-
     .contact-container{
-
         padding:28px;
-
     }
-
 }
 
 </style>
-
 </head>
 
 <body>
 
-<!-- HEADER -->
-
 <header class="top-header">
-
     <div class="logo">
-
-        ATS <span>VENTILATION</span>
-
+        <a href="index.html">
+            <img src="logo.PNG" alt="ATS Ventilation Logo">
+        </a>
     </div>
 
     <nav>
-
         <ul>
-
             <li><a href="index.html">Home</a></li>
-
             <li><a href="services.html">Services</a></li>
-
             <li><a href="gallery.html">Gallery</a></li>
-
             <li><a href="about.html">About</a></li>
-
             <li><a href="contact.html">Contact</a></li>
-
         </ul>
-
     </nav>
 
     <div class="menu-icon" id="menuToggle">
-
         <i class="fa-solid fa-bars"></i>
-
     </div>
-
 </header>
 
-<!-- MOBILE MENU -->
-
 <div class="mobile-menu" id="mobileMenu">
-
     <a href="index.html">Home</a>
-
     <a href="services.html">Services</a>
-
     <a href="gallery.html">Gallery</a>
-
     <a href="about.html">About</a>
-
     <a href="contact.html">Contact</a>
-
 </div>
 
-<!-- HERO -->
-
 <section class="contact-hero">
-
     <h1>Get A Free Quote</h1>
-
     <p>
-
         Need ventilation, ducting or extraction work?
-
         Send us a message and we’ll get back to you as soon as possible.
-
     </p>
-
 </section>
-
-<!-- CONTACT SECTION -->
 
 <section class="contact-section">
-
     <div class="contact-container">
-
-        <!-- FORM -->
-
         <form action="https://api.web3forms.com/submit" method="POST">
-
-            <!-- WEB3FORMS KEY -->
-
             <input 
-
                 type="hidden" 
-
                 name="access_key" 
-
                 value="3fc3849d-7587-4c16-8849-9bac4f793e0e"
-
             >
-
-            <!-- EMAIL SUBJECT -->
-
             <input 
-
                 type="hidden" 
-
                 name="subject" 
-
                 value="New ATS Ventilation Enquiry"
-
             >
-
-            <!-- REDIRECT PAGE -->
-
             <input 
-
                 type="hidden" 
-
                 name="redirect" 
-
                 value="https://atsventilation.co.uk/thankyou.html"
-
             >
-
-            <!-- SPAM PROTECTION -->
-
             <input 
-
                 type="checkbox" 
-
                 name="botcheck" 
-
                 style="display:none;"
-
             >
 
             <input 
-
                 type="text" 
-
                 name="name" 
-
                 placeholder="Your Name"
-
                 required
-
             >
-
             <input 
-
                 type="email" 
-
                 name="email" 
-
                 placeholder="Your Email"
-
                 required
-
             >
-
             <textarea 
-
                 name="message" 
-
                 placeholder="Your Message"
-
                 required
-
             ></textarea>
-
             <button type="submit">
-
                 Send Message
-
             </button>
-
         </form>
 
-        <!-- INFO -->
-
         <div class="contact-info">
-
             <h2>Contact Information</h2>
-
             <p>
-
                 ATS Ventilation provides professional commercial and domestic ventilation services across Sheffield and surrounding areas.
-
             </p>
-
             <p>
-
                 <strong>Phone:</strong><br>
-
                 <a href="tel:079999013788">
-
                     07999 901 3788
-
                 </a>
-
             </p>
-
             <p>
-
                 <strong>Email:</strong><br>
-
                 <a href="mailto:info@atsventilation.co.uk">
-
                     info@atsventilation.co.uk
-
                 </a>
-
             </p>
-
             <p>
-
                 <strong>Location:</strong><br>
-
                 Sheffield, South Yorkshire
-
             </p>
-
         </div>
-
     </div>
-
 </section>
 
-<!-- FOOTER -->
-
 <footer>
-
     <h3>ATS Ventilation</h3>
-
     <p>Sheffield • South Yorkshire</p>
-
     <p><strong>07999 901 3788</strong></p>
-
     <p>info@atsventilation.co.uk</p>
-
     <br>
-
     <p>&copy; 2026 ATS Ventilation. All Rights Reserved.</p>
-
 </footer>
 
 <script>
-
 /* MOBILE MENU */
-
 const menuToggle = document.getElementById('menuToggle');
-
 const mobileMenu = document.getElementById('mobileMenu');
 
 menuToggle.addEventListener('click', () => {
-
     mobileMenu.classList.toggle('active');
-
 });
 
 /* CLOSE MENU WHEN LINK CLICKED */
-
 const mobileLinks = document.querySelectorAll('.mobile-menu a');
-
 mobileLinks.forEach(link => {
-
     link.addEventListener('click', () => {
-
         mobileMenu.classList.remove('active');
-
     });
-
 });
-
 </script>
 
 </body>
-
 </html>
