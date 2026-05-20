@@ -41,7 +41,7 @@
             position: fixed;
             top: 0; left: 0; right: 0;
             background: white;
-            padding: 18px 5%;
+            padding: 12px 5%; /* Slightly reduced vertical padding to accommodate larger image naturally */
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -56,7 +56,7 @@
         }
 
         .logo img {
-            height: 38px; /* Matches the visual profile of your original 1.85rem text */
+            height: 65px; /* Increased from 38px so it's clearly visible */
             width: auto;
             display: block;
         }
@@ -104,7 +104,7 @@
         /* ---------------- MOBILE MENU PANEL ---------------- */
         .mobile-menu {
             position: fixed;
-            top: 85px;
+            top: 90px;
             right: -100%;
             width: 260px;
             height: 100vh;
@@ -138,7 +138,7 @@
             justify-content: center;
             text-align: center;
             color: white;
-            margin-top: 78px;
+            margin-top: 88px; /* Adjusted to account for the larger header image */
             overflow: hidden;
             background: #000;
         }
@@ -427,10 +427,10 @@
         
         @media (max-width: 768px) {
             .top-header {
-                padding: 12px 5%;
+                padding: 10px 5%;
             }
             .logo img {
-                height: 28px; /* Scales down text match for mobile menu layouts */
+                height: 45px; /* Boosted from 28px so it scales perfectly on mobile screens */
             }
             .menu-icon {
                 width: 50px;
@@ -438,10 +438,10 @@
                 font-size: 1.2rem;
             }
             .hero {
-                margin-top: 72px;
+                margin-top: 65px;
             }
             .mobile-menu {
-                top: 75px;
+                top: 65px;
             }
         }
 
@@ -467,7 +467,6 @@
 </head>
 <body>
 
-    <!-- HEADER -->
     <header class="top-header">
         <div class="logo">
             <a href="index.html">
@@ -490,7 +489,6 @@
         </div>
     </header>
 
-    <!-- MOBILE MENU -->
     <div class="mobile-menu" id="mobileMenu">
         <a href="index.html">Home</a>
         <a href="#services">Services</a>
@@ -499,7 +497,6 @@
         <a href="contact.html">Contact</a>
     </div> 
 
-    <!-- HERO -->
     <section class="hero">
         <div class="hero-slide"></div>
         <div class="hero-slide"></div>
@@ -517,7 +514,6 @@
         </div>
     </section>
 
-    <!-- SERVICES -->
     <section id="services" class="services">
         <div class="section-title">
             <h2>Our Services</h2>
@@ -548,7 +544,6 @@
         </div>
     </section>
 
-    <!-- ABOUT -->
     <section id="about" class="about">
         <div class="about-container">
             <img src="IMG_2667.webp" alt="ATS Ventilation team working on ducting installation">
@@ -561,7 +556,6 @@
         </div>
     </section>
 
-    <!-- GALLERY -->
     <section id="projects" class="gallery">
         <div class="section-title">
             <h2>Recent Projects</h2>
@@ -576,14 +570,12 @@
         </div>
     </section>
 
-    <!-- CTA -->
     <section id="contact" class="cta">
         <h2>Ready to Improve Your Air Quality?</h2>
         <p class="cta-p">Get in touch today for a free no-obligation quote.</p>
         <a href="tel:079999013788" class="btn btn-primary cta-btn">📞 07999 901 3788</a>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <h3>ATS Ventilation</h3>
         <p>Sheffield • South Yorkshire</p>
@@ -593,13 +585,11 @@
         <p>&copy; 2026 ATS Ventilation. All Rights Reserved.</p>
     </footer>
     
-    <!-- COOKIE BANNER -->
     <div class="cookie-banner" id="cookieBanner">
         <p>We use cookies to improve your experience on our website.</p>
         <button id="acceptCookies">Accept</button>
     </div>
 
-    <!-- JAVASCRIPT -->
     <script>
         // Responsive Menu Operations
         const menuToggle = document.getElementById('menuToggle');
